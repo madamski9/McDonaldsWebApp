@@ -21,19 +21,22 @@ async function fetchPokemonDetails(pokemonName) {
 async function initPokemonList() {
     const pokemonListElement = document.getElementById('pokemon-list');
     const pokemonDetailsElement = document.getElementById('pokemon-details');
-    const searchInput = document.querySelector('.search');
+    // const searchInput = document.querySelector('.search'); <--- do dokonczenia
     const pokemonList = await fetchPokemonList();
     if (pokemonList) {
-        pokemonList.forEach(pokemon => {
-            const listItem = document.createElement('li');
-            listItem.textContent = pokemon.name;
+        for (const pokemon of pokemonList) {
+            const pokemonDetails = await fetchPokemonDetails(pokemon.name);
+            const listItem = document.createElement('div');
             listItem.classList.add('clickable');
+            listItem.innerHTML = `
+                <img src="${pokemonDetails.sprites.front_default}" alt="${pokemon.name}">
+                <span>#${pokemonDetails.id} ${pokemon.name}</span>
+            `;
             listItem.addEventListener('click', async () => {
-                const pokemonDetails = await fetchPokemonDetails(pokemon.name);
                 displayPokemonDetails(pokemonDetails, pokemonDetailsElement);
             });
             pokemonListElement.appendChild(listItem);
-        });
+        }
     }
 }
 
