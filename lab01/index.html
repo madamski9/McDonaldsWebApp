@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
     <div class="header">
@@ -15,6 +18,10 @@
         <section class="pokemon-list">
             <h3>Lista Pokemonów</h3>
             <ul id="pokemon-list"></ul>
+            <div class="pagination">
+                <button id="prev-button">⬅️ Previous</button>
+                <button id="next-button">Next ➡️</button>
+            </div>
         </section>
         <section class="pokemon-details">
             <h3>Detale Pokemonów</h3>
@@ -22,6 +29,6 @@
         </section>
     </div>
     <div id="loading-indicator" style="display: none;">Ładowanie...</div>
-    <script src="app.js"></script>
+    <script type="text/babel" src="app.js"></script>
 </body>
 </html>
