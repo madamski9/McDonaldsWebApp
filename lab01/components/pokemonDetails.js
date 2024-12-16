@@ -1,13 +1,21 @@
-function PokemonDetails({ pokemon }) {
+const PokemonDetails = ({ details }) => {
+    if (!details) {
+        return <p>Wybierz Pokemona, aby zobaczyć szczegóły.</p>;
+    }
+
     return (
-        <div className="pokemon-details">
-            <h4>{pokemon.name}</h4>
-            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-            <p>Height: {pokemon.height}</p>
-            <p>Weight: {pokemon.weight}</p>
-            <p>Type: {pokemon.types.map(typeInfo => typeInfo.type.name).join(', ')}</p>
+        <div id="pokemon-details">
+            <h4>{details.name}</h4>
+            {details.sprites && details.sprites.front_default ? (
+                <img src={details.sprites.front_default} alt={details.name} />
+            ) : (
+                <span>Brak obrazka</span>
+            )}
+            <p>Height: {details.height}</p>
+            <p>Weight: {details.weight}</p>
+            <p>Type: {details.types.map(typeInfo => typeInfo.type.name).join(', ')}</p>
         </div>
     );
-}
+};
 
-export default PokemonDetails;
+window.PokemonDetails = PokemonDetails;
