@@ -16,8 +16,7 @@ async function fetchPokemonList(limit, offset) {
                 return pokemonDetailsResponse.json() 
             })
         )
-
-        pokemonList = detailedPokemonList 
+        pokemonList = detailedPokemonList
         renderApp()
     } catch (error) {
         console.error(error)
@@ -36,6 +35,11 @@ async function fetchPokemonDetails(pokemonName) {
     }
 }
 
+function filterPokemon(searchTerm) {
+    return pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()));
+}
+let searchQuery = ''
+
 const App = () => {
     useEffect(() => {
         const fetchData = async () => {
@@ -50,7 +54,17 @@ const App = () => {
 
     const handleSearchChange = (e) => {
         searchQuery = e.target.value
+        pokemonDetails = null
         renderApp()
+    }
+
+    if (searchQuery) {
+        const filteredPokemon = filterPokemon(searchQuery);
+        if (filteredPokemon.length === 1) {
+            fetchPokemonDetails(filteredPokemon[0].name);
+        } else {
+            pokemonDetails = null; 
+        }
     }
 
     return (
@@ -61,7 +75,8 @@ const App = () => {
                     <input
                         type="text"
                         placeholder="Wpisz nazwę Pokemona..."
-                        onInput={handleSearchChange} 
+                        value={searchQuery}
+                        onChange={handleSearchChange} 
                     />
                 </section>
             </div>

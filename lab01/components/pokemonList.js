@@ -1,23 +1,19 @@
 const PokemonList = ({ pokemonList, onPokemonClick }) => {
     return (
         <ul id="pokemon-list">
-            {pokemonList.map((pokemon, index) => (
+            {pokemonList.map((pokemon) => (
                 <li 
-                    key={index} 
+                    key={pokemon.name} 
                     className="clickable" 
                     onClick={() => onPokemonClick(pokemon)}
                 >
-                    {pokemon.sprites && pokemon.sprites.front_default ? ( 
-                        <img 
-                            src={pokemon.sprites.front_default} 
-                            className="pokemonImg"
-                            alt={pokemon.name}
-                        />
-                    ) : (
-                        <span>Brak obrazka</span>
-                    )}
+                    <img 
+                        src={pokemon.sprites?.front_default || "brak obrazka"} 
+                        className="pokemonImg"
+                        alt={pokemon.name}
+                    />
                     <div className="pokemonNames">
-                        {pokemon.name ? pokemon.name : "Nieznany Pokemon"}
+                        #{pokemon.id} {pokemon.name ? pokemon.name : "Nieznany Pokemon"}
                     </div>
                 </li>
             ))}
