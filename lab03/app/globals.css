@@ -1,0 +1,159 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  height: auto; 
+}
+
+.pokemon-list, .pokemon-details {
+  width: 500px; 
+  flex-shrink: 0;
+  flex-grow: 0; 
+  margin: 20px 0; 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: large;
+}
+.pokemon-list {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.pokemon-details {
+  margin-left: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+.pokemon-list h3, .pokemon-details h3 {
+  text-align: center;
+}
+
+.clickable {
+  cursor: pointer;
+  display: flex;
+  padding-right: 160px;
+}
+.clickable:hover {
+  background-color: #f0f0f0;
+}
+.pokemonNames {
+  padding-top: 35px;
+  padding-left: 20px;
+  text-decoration: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+#prev-button, #next-button {
+  padding: 5px;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 10px;
+}
+#prev-button:hover, #next-button:hover {
+  background-color: rgb(219, 219, 219);
+  cursor: pointer;
+}
+
+.pokemon-search {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pokemon-search input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  width: 80%;
+}
+
+nav {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none; 
+  padding: 0;
+}
+
+.nav-list li {
+  margin: 0 20px; 
+}
+
+.nav-list a {
+  display: inline-block;
+  padding: 10px 20px; 
+  border: 2px solid #4B0082;
+  border-radius: 50%; 
+  color: #4B0082; 
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none; 
+  text-align: center; 
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+.nav-list a:hover {
+  background-color: #4B0082; 
+  color: white;
+  border-color: #3A006D; 
+}
+
+.star-label {
+  position: relative;
+  display: inline-block;
+}
+
+.star-checkbox {
+  display: none; /* Ukrywamy checkbox, ale wciąż umożliwiamy jego interakcję */
+}
+
+.star {
+  width: 40px;
+  height: 40px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  display: inline-block;
+  transition: background-color 0.3s, border-color 0.3s;
+  cursor: pointer;
+}
+
+.star:hover {
+  background-color: rgb(255, 221, 30);
+  border-color: yellow;
+}
+
+.star-checkbox:checked + .star {
+  background-color: rgb(255, 221, 30); 
+  border-color: yellow; 
+}
+
+.star-checkbox:not(:checked) + .star {
+  background-color: rgb(167, 167, 167);
+  border-color: black;
+}
+
+.mainPokemon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
