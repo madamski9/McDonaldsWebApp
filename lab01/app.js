@@ -1,6 +1,7 @@
 const { useEffect } = React
 
 let pokemonList = []
+let pokemonFullList = []
 let pokemonDetails = null
 let offset = 0
 const limit = 20
@@ -9,6 +10,8 @@ async function fetchPokemonList(limit, offset) {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
         const data = await response.json()
+        const responseFull = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0")
+        const dataFull = await responseFull.json()
 
         const detailedPokemonList = await Promise.all(
             data.results.map(async (pokemon) => {
@@ -17,6 +20,7 @@ async function fetchPokemonList(limit, offset) {
             })
         )
         pokemonList = detailedPokemonList
+        pokemonFullList = dataFull.results
         renderApp()
     } catch (error) {
         console.error(error)
@@ -36,7 +40,7 @@ async function fetchPokemonDetails(pokemonName) {
 }
 
 function filterPokemon(searchTerm) {
-    return pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    return pokemonFullList.filter(pokemon => pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()));
 }
 let searchQuery = ''
 
