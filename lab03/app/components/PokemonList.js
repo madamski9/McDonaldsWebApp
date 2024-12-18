@@ -1,18 +1,22 @@
 "use client"
 import Link from 'next/link';
+import React, { useState } from "react"
 
 export default function PokemonList({ pokemonList }) {
-    let favouritePokemons = [];
+    const [ favPokemons, setFavPokemons ] = useState([])
+    console.log(favPokemons)
 
-    const addFavourite = (pokemonName) => {
-        if (!favouritePokemons.includes(pokemonName)) {
-            favouritePokemons.push(pokemonName);
-        }
-    };
-
-    const handleAddToFavourite = (pokemon) => {
-        addFavourite(pokemon.name) 
-        console.log(`dodajesz ${pokemon.name} do ulubionych`)
+    const toggleFavourite = (pokemon) => {
+        console.log(`dodano ${pokemon.name} do ulubionych`)
+        setFavPokemons((prevFavs) => {
+            if (prevFavs.some((fav) => fav.name === pokemon.name)) {
+                console.log(`usunieta ${pokemon.name} z ulubionych`)
+                return prevFavs.filter((fav) => fav.name !== pokemon.name);
+            } else {
+                console.log(`dodano ${pokemon.name} do ulubionych`)
+                return [...prevFavs, pokemon];
+            }
+        })
     }
 
     return (
@@ -38,7 +42,8 @@ export default function PokemonList({ pokemonList }) {
                                 <input 
                                     type="checkbox" 
                                     className="star-checkbox" 
-                                    onChange={() => handleAddToFavourite(pokemon)} 
+                                    checked={favPokemons.some((fav) => fav.name === pokemon.name)} 
+                                    onChange={() => toggleFavourite(pokemon)}  
                                 />
                                 <div className="star"></div>
                             </label>

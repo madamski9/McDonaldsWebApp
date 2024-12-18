@@ -3,7 +3,7 @@ import PokemonList from "@/app/components/PokemonList"
 export default async function PokemonPage() {
     const fetchPokemonList = async () => {
         try {
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`)
+            const response = await fetch(`${process.env.REACT_APP_API_URL}pokemon?limit=20&offset=0`)
             const data = await response.json()
     
             const detailedPokemonList = await Promise.all(

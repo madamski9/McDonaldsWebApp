@@ -124,7 +124,7 @@ nav {
 }
 
 .star-checkbox {
-  display: none; /* Ukrywamy checkbox, ale wciąż umożliwiamy jego interakcję */
+  display: none;
 }
 
 .star {

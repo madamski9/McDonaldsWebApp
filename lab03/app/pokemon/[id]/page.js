@@ -3,7 +3,7 @@ import PokemonDetails from "@/app/components/PokemonDetails"
 export default async function PokemonDetailsPage({ params }) {
     try {
         const { id } = await params
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        const res = await fetch(`${process.env.REACT_APP_API_URL}pokemon/${id}`)
         const data = await res.json()
         return (
             <div>
