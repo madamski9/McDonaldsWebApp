@@ -15,25 +15,36 @@
   height: auto; 
 }
 
-.pokemon-list, .pokemon-details {
-  width: 500px; 
-  flex-shrink: 0;
-  flex-grow: 0; 
-  margin: 20px 0; 
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: large;
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
 }
-.pokemon-list {
+.mainPokemon {
   display: flex;
-  flex-direction: column;
-  margin-right: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
 }
+
 .pokemon-details {
-  margin-left: 10px;
   text-align: center;
   justify-content: center;
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: large;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.pokemon-details-img {
+  width: 100%;
 }
 
 .pokemon-list h3, .pokemon-details h3 {
@@ -41,11 +52,10 @@
 }
 
 .clickable {
-  cursor: pointer;
   display: flex;
-  padding-right: 160px;
+  text-decoration: none;
 }
-.clickable:hover {
+.mainPokemon:hover {
   background-color: #f0f0f0;
 }
 .pokemonNames {
@@ -86,6 +96,7 @@
 nav {
   text-align: center;
   margin: 20px 0;
+  margin-left: 10px;
 }
 
 .nav-list {
@@ -102,9 +113,9 @@ nav {
 .nav-list a {
   display: inline-block;
   padding: 10px 20px; 
-  border: 2px solid #4B0082;
-  border-radius: 50%; 
-  color: #4B0082; 
+  border: 2px solid black;
+  border-radius: 20px; 
+  color: black; 
   font-size: 18px;
   font-weight: 500;
   text-decoration: none; 
@@ -113,14 +124,15 @@ nav {
 }
 
 .nav-list a:hover {
-  background-color: #4B0082; 
+  background-color: black; 
   color: white;
-  border-color: #3A006D; 
+  border-color: black; 
 }
 
 .star-label {
   position: relative;
   display: inline-block;
+  top: -25px;
 }
 
 .star-checkbox {
@@ -128,8 +140,8 @@ nav {
 }
 
 .star {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   display: inline-block;
   transition: background-color 0.3s, border-color 0.3s;
@@ -147,13 +159,14 @@ nav {
 }
 
 .star-checkbox:not(:checked) + .star {
-  background-color: rgb(167, 167, 167);
+  background-color: rgb(213, 213, 213);
   border-color: black;
 }
 
-.mainPokemon {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
+.input {
+  width: 300px;
+  padding: 5px;
+  font-size: medium;
+  border: 2px solid black;
+  border-radius: 10px;
 }

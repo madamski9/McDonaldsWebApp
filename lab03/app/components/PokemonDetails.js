@@ -6,7 +6,7 @@ export default function PokemonDetails({ details }) {
             <section className="pokemon-details">
                 <h4>{details.name}</h4>
                 {details.sprites && details.sprites.front_default ? (
-                    <img src={details.sprites.front_default} alt={details.name} />
+                    <img src={details.sprites.front_default} alt={details.name} className="pokemon-details-img" />
                 ) : (
                     <span>Brak obrazka</span>
                 )}

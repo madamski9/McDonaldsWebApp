@@ -1,6 +1,6 @@
 export default function PokemonLayout({ children }) {
     return (
-        <div>
+        <div className="header">
             {children}
         </div>
     )

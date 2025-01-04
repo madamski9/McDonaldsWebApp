@@ -1,21 +1,67 @@
-export default function FavoritesPage({ pokemon }) {
-    if (!pokemon) {
-        return <p>You have no favorite pokemons</p>; 
+"use client"
+import Link from 'next/link';
+import React, { useEffect, useState } from "react"
+
+export default function FavouritesPage() {
+    const [favouritePokemons, setFavouritePokemons] = useState([])
+
+    const fetchPokemons = async (favPokemon) => {
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}pokemon/${favPokemon}`) 
+            const data = await response.json()
+            return data
+        } catch (error) {
+            console.error(error)
+            return null
+        }
     }
 
+    const fetchFavouritePokemons = async () => {
+        const savedCheckedPokemons = localStorage.getItem("isChecked")
+        if (savedCheckedPokemons) {
+            const parsedCheckedPokemons = JSON.parse(savedCheckedPokemons)
+
+            const favouriteList = Object.keys(parsedCheckedPokemons).filter(
+                (pokemon) => parsedCheckedPokemons[pokemon] === true
+            )
+
+            const pokemonDetails = await Promise.all(
+                favouriteList.map((pokemonName) => fetchPokemons(pokemonName))
+            )
+
+            setFavouritePokemons(pokemonDetails)
+        }
+    }
+
+    useEffect(() => {
+        fetchFavouritePokemons()
+    }, [])
+
     return (
-        <div>
-            <h3>Your Favorite Pokemon</h3>
-            <p>Here you can find all your favorite Pokemon!</p>
-            {pokemon.length === 0 ? (
-                <p>You have no favorite Pokemon yet.</p>
-            ) : (
-                <ul>
-                    {pokemon.map((pokemonName, index) => (
-                        <li key={index}>{pokemonName}</li>
-                    ))}
-                </ul>
-            )}
+        <div className='main'>
+            <div className="gridContainer">
+                {favouritePokemons.length > 0 ? (
+                    favouritePokemons.map((pokemon) => (
+                        <div key={pokemon.name} className="mainPokemon">
+                            <Link href={`/pokemon/${pokemon.name}`}>
+                                <li className="clickable">
+                                    <img
+                                        src={pokemon.sprites?.front_default || "brak obrazka"}
+                                        alt={pokemon.name}
+                                        className="pokemonImg"
+                                    />
+                                    <div className="pokemonNames">
+                                        #{pokemon.id} {pokemon.name}
+                                    </div>
+                                </li>
+                            </Link>
+                        </div>
+                    ))
+                ) : (
+                    <p>Nie masz jeszcze ulubionych pokemonów.</p>
+                )}
+            </div>
         </div>
     );
+    
 }
