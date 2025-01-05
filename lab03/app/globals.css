@@ -54,6 +54,7 @@
 .clickable {
   display: flex;
   text-decoration: none;
+  padding-right: 114px;
 }
 .mainPokemon:hover {
   background-color: #f0f0f0;
@@ -181,6 +182,15 @@ nav {
   font-size: medium;
   border: 2px solid black;
   border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 200px;
+}
+.limitInput {
+  width: 10%;
+  padding: 5px;
+  font-size: medium;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 .lt, .gt {
@@ -197,3 +207,4 @@ nav {
   cursor: pointer;
   background-color: rgb(227, 227, 227);
 }
+
