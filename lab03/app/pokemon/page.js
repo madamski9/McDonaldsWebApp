@@ -83,12 +83,12 @@ export default function PokemonPage() {
 
     const handleClickLeft = () => {
         if (offsetValue > 0) {
-            setOffsetValue(offsetValue - 21)
+            setOffsetValue(offsetValue - limit)
         }
     }
 
     const handleClickRight = () => {
-        setOffsetValue(offsetValue + 21)
+        setOffsetValue(offsetValue + limit)
     }
 
     useEffect(() => {
