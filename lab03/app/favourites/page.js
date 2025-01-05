@@ -33,6 +33,19 @@ export default function FavouritesPage() {
         }
     }
 
+    const handleChange = async (pokemonName) => {
+        const data = JSON.parse(localStorage.getItem("isChecked"))
+        console.log(Object.keys(data))
+        delete data[pokemonName]
+        localStorage.setItem("isChecked", JSON.stringify(data))
+        const filteredList = Object.keys(data).filter(pokemon => pokemon != pokemonName)
+        console.log(filteredList)
+        const pokemonDetails = await Promise.all(
+            filteredList.map((pokemon) => fetchPokemons(pokemon))
+        )
+        setFavouritePokemons(pokemonDetails)
+    }
+
     useEffect(() => {
         fetchFavouritePokemons()
     }, [])
@@ -55,6 +68,15 @@ export default function FavouritesPage() {
                                     </div>
                                 </li>
                             </Link>
+                            <label className="star-label">
+                                <input 
+                                    type="checkbox" 
+                                    className="star-checkbox" 
+                                    checked={JSON.parse(localStorage.getItem("isChecked"))[pokemon.name] || false}
+                                    onChange={() => handleChange(pokemon.name)}
+                                />
+                                <div className="star"></div>
+                            </label>
                         </div>
                     ))
                 ) : (

@@ -99,14 +99,14 @@ nav {
   margin-left: 10px;
 }
 
-.nav-list {
+.nav-list, .nav-list2 {
   display: flex;
   justify-content: center;
   list-style-type: none; 
   padding: 0;
 }
 
-.nav-list li {
+.nav-list li, .nav-list2 li {
   margin: 0 20px; 
 }
 
@@ -122,8 +122,20 @@ nav {
   text-align: center; 
   transition: background-color 0.3s, color 0.3s; 
 }
+.nav-list2 a {
+  display: inline-block;
+  padding: 2px 12px; 
+  border: 2px solid black;
+  border-radius: 20px; 
+  color: black; 
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none; 
+  text-align: center; 
+  transition: background-color 0.3s, color 0.3s; 
+}
 
-.nav-list a:hover {
+.nav-list a:hover, .nav-list2 a:hover {
   background-color: black; 
   color: white;
   border-color: black; 
@@ -169,4 +181,19 @@ nav {
   font-size: medium;
   border: 2px solid black;
   border-radius: 10px;
+}
+
+.lt, .gt {
+  padding: 10px;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  margin-left: 7px;
+  margin-right: 7px;
+  font-weight: bold;
+}
+.lt:hover, .gt:hover {
+  cursor: pointer;
+  background-color: rgb(227, 227, 227);
 }
