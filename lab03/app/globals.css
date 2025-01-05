@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(148, 223, 251);
+}
 .header {
   display: flex;
   flex-direction: column;
@@ -29,6 +32,7 @@
   border-radius: 20px;
   padding: 10px;
   cursor: pointer;
+  background-color: rgb(212, 245, 212);
 }
 
 .pokemon-details {
@@ -96,7 +100,6 @@
 
 nav {
   text-align: center;
-  margin: 20px 0;
   margin-left: 10px;
 }
 
@@ -107,8 +110,11 @@ nav {
   padding: 0;
 }
 
-.nav-list li, .nav-list2 li {
+.nav-list li {
   margin: 0 20px; 
+}
+.nav-list2 li {
+  margin: 0 10px;
 }
 
 .nav-list a {
@@ -162,12 +168,12 @@ nav {
 }
 
 .star:hover {
-  background-color: rgb(255, 221, 30);
+  background-color: rgb(255, 217, 0);
   border-color: yellow;
 }
 
 .star-checkbox:checked + .star {
-  background-color: rgb(255, 221, 30); 
+  background-color: rgb(255, 217, 0); 
   border-color: yellow; 
 }
 

@@ -13,7 +13,8 @@ export default function PokemonPage() {
     const params = useSearchParams()
     const type = params.get("type") 
     const search = params.get("search") 
-    const limit = parseInt(params.get("limit"), 10)
+    const limit = parseInt(params.get("limit") || "21", 10)
+    const sort = params.get("sort")
 
     const fetchPokemonList = async (offset, type, limit) => {
         try {
@@ -106,12 +107,12 @@ export default function PokemonPage() {
         } else {
             setFilteredPokemonList(pokemonList)
         }
-    }, [search, pokemonList])
+    }, [search, pokemonList, limit])
 
     useEffect(() => {
         if (limit) {
             setInputLimitValue(limit)
-        }
+        } 
     }, [limit])
 
     return (
@@ -125,7 +126,7 @@ export default function PokemonPage() {
                     onChange={handleChange}
                 /><input
                     className="limitInput"
-                    type="text"
+                    type="number"
                     placeholder="limit"
                     value={inputLimitValue}
                     onChange={handleLimitChange}

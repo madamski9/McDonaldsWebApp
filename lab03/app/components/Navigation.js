@@ -62,6 +62,69 @@ export default function Navigation() {
             Ghost
           </Link>
         </li>
+        <li>
+          <Link
+            href={`/pokemon?${createQueryString('normal')}`}
+          >
+            Normal
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={`/pokemon?${createQueryString('flying')}`}
+          >
+            Flying
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={`/pokemon?${createQueryString('fighting')}`}
+          >
+            Fighting
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={`/pokemon?${createQueryString('poison')}`}
+          >
+            Poison
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={`/pokemon?${createQueryString('ground')}`}
+          >
+            Ground
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={`/pokemon?${createQueryString('rock')}`}
+          >
+            Rock
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={`/pokemon?${createQueryString('steel')}`}
+          >
+            Steel
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={`/pokemon?${createQueryString('water')}`}
+          >
+            Water
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={`/pokemon?${createQueryString('electric')}`}
+          >
+            Electric
+          </Link>
+        </li>
       </ul>
     </nav>
   )
