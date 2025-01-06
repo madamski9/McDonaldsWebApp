@@ -38,8 +38,8 @@ body {
 .pokemon-details {
   text-align: center;
   justify-content: center;
-  padding-right: 100px;
-  padding-left: 100px;
+  padding-right: 101.5px;
+  padding-left: 101.5px;
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: large;
@@ -121,32 +121,41 @@ nav {
 .nav-list a {
   display: inline-block;
   padding: 10px 20px; 
-  border: 2px solid black;
-  border-radius: 20px; 
-  color: black; 
+  border: 2px solid #ccc;
+  border-radius: 50px; 
+  color: #333;
   font-size: 18px;
   font-weight: 500;
   text-decoration: none; 
   text-align: center; 
-  transition: background-color 0.3s, color 0.3s; 
-}
-.nav-list2 a {
-  display: inline-block;
-  padding: 2px 12px; 
-  border: 2px solid black;
-  border-radius: 20px; 
-  color: black; 
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none; 
-  text-align: center; 
-  transition: background-color 0.3s, color 0.3s; 
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; 
+  background-color: #f9f9f9; 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) inset; /* Cień dla efektu 3D */
 }
 
 .nav-list a:hover, .nav-list2 a:hover {
-  background-color: black; 
-  color: white;
-  border-color: black; 
+  background-color: #eaeaea; 
+  color: #000; 
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15) inset; /* Większy cień */
+}
+.nav-list a:active, .nav-list2 a:active {
+  background-color: #dcdcdc; 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05) inset; /* Wciśnięty cień */
+}
+
+.nav-list2 a {
+  display: inline-block;
+  padding: 2px 12px; 
+  border: 2px solid #ccc;
+  border-radius: 20px; 
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none; 
+  text-align: center; 
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; 
+  background-color: #f9f9f9; 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) inset; /* Cień dla efektu 3D */
 }
 
 .star-label {
@@ -185,19 +194,39 @@ nav {
 
 .input {
   width: 300px;
-  padding: 5px;
+  padding: 10px;
   font-size: medium;
-  border: 2px solid black;
-  border-radius: 10px;
+  border: 2px solid #ccc; 
+  border-radius: 50px; 
   margin-right: 10px;
   margin-left: 200px;
+  background-color: #f9f9f9; 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) inset; /* Cień dla efektu wypukłości */
+  transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+.input:focus {
+  background-color: #ffffff;
+  border-color: #aaa; 
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15) inset; 
+  outline: none; 
 }
 .limitInput {
   width: 10%;
-  padding: 5px;
+  padding: 10px;
   font-size: medium;
-  border: 2px solid black;
-  border-radius: 10px;
+  border: 2px solid #ccc; 
+  border-radius: 50px; 
+  background-color: #f9f9f9;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) inset; 
+  transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s; 
+}
+
+.limitInput:focus {
+  background-color: #ffffff; 
+  border-color: #aaa; 
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15) inset; 
+  outline: none; 
 }
 
 .lt, .gt {
@@ -215,3 +244,23 @@ nav {
   background-color: rgb(227, 227, 227);
 }
 
+.detailsButton {
+  text-decoration: none;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 13px;
+  padding: 8px;
+  margin-top: 10px;
+  font-size: medium;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.detailsButton:hover {
+  background-color: black; 
+  color: white;
+  border-color: black; 
+}
+.detailsInfo {
+  display: flex;
+  flex-direction: column;
+}

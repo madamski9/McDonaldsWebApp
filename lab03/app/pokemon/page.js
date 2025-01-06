@@ -82,19 +82,9 @@ export default function PokemonPage() {
         window.history.replaceState({}, "", newUrl)
     }
 
-    const handleClickLeft = () => {
-        if (offsetValue > 0) {
-            setOffsetValue(offsetValue - limit)
-        }
-    }
-
-    const handleClickRight = () => {
-        setOffsetValue(offsetValue + limit)
-    }
-
-    useEffect(() => {
-        fetchPokemonList(offsetValue, type, limit)
-    }, [offsetValue, type, limit])
+    const handleClickLeft = () => (offsetValue > 0) ? setOffsetValue(offsetValue - limit) : null
+    const handleClickRight = () => setOffsetValue(offsetValue + limit)
+    useEffect(() => { fetchPokemonList(offsetValue, type, limit) }, [offsetValue, type, limit])
 
     useEffect(() => {
         if (search) {
@@ -106,14 +96,10 @@ export default function PokemonPage() {
             setFilteredPokemonList(filtered)
         } else {
             setFilteredPokemonList(pokemonList)
-        }
+        } 
     }, [search, pokemonList, limit])
 
-    useEffect(() => {
-        if (limit) {
-            setInputLimitValue(limit)
-        } 
-    }, [limit])
+    useEffect(() => { (limit) ? setInputLimitValue(limit) : null }, [limit])
 
     return (
         <div className="header">
@@ -132,7 +118,7 @@ export default function PokemonPage() {
                     onChange={handleLimitChange}
                 />
             </div>
-            <PokemonList pokemonList={filteredPokemonList} /> 
+            <PokemonList pokemonList={sort === "name" ? [...filteredPokemonList].sort((a, b) => a.name.localeCompare(b.name)) : filteredPokemonList} />
             <div className="buttons">
                 <button className="lt" onClick={handleClickLeft}>&lt;</button>
                 <button className="gt" onClick={handleClickRight}>&gt;</button>

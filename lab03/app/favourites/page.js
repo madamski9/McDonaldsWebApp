@@ -1,9 +1,12 @@
 "use client"
 import Link from 'next/link';
 import React, { useEffect, useState } from "react"
+import { useSearchParams } from 'next/navigation';
 
 export default function FavouritesPage() {
     const [favouritePokemons, setFavouritePokemons] = useState([])
+    const searchParams = useSearchParams()
+    const sort = searchParams.get("sort")
 
     const fetchPokemons = async (favPokemon) => {
         try {
@@ -52,7 +55,9 @@ export default function FavouritesPage() {
         <div className='main'>
             <div className="gridContainer">
                 {favouritePokemons.length > 0 ? (
-                    favouritePokemons.map((pokemon) => (
+                    favouritePokemons
+                    .sort((a, b) => sort === "name" ? a.name.localeCompare(b.name) : 0)
+                    .map((pokemon) => (
                         <div key={pokemon.name} className="mainPokemon">
                             <Link href={`/pokemon/${pokemon.name}`}>
                                 <li className="clickable">

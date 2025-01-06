@@ -1,13 +1,14 @@
 "use client"
 import PokemonDetails from "@/app/components/PokemonDetails"
+import PokemonStats from "@/app/components/PokemonStats"
 import { useEffect, useState } from "react"
 import { useParams, useSearchParams } from "next/navigation"
 
 export default function PokemonDetailsPage() {
     const [pokemonData, setPokemonData] = useState(null) 
-    const [stats, setStats] = useState(null)
     const params = useParams()
     const searchParams = useSearchParams()
+    const view = searchParams.get("view")
 
     const fetchPokemonDetails = async (id) => {
         try {
@@ -29,26 +30,32 @@ export default function PokemonDetailsPage() {
     }
 
     useEffect(() => {
-        if (params?.id) {
-            fetchPokemonDetails(params.id)  
-        }
+        fetchPokemonDetails(params.id)  
     }, [params])
-
-    useEffect(() => {
-        const searchStats = searchParams.get("view")
-        setStats(searchStats)
-    }, [searchParams])
 
     return (
         <div>
             {pokemonData ? (
-                <PokemonDetails details={pokemonData} />
+                view === "stats" ? (
+                    <div className="detailsInfo"> 
+                        <PokemonStats stats={pokemonData.stats}/>
+                        <button
+                            className="detailsButton"
+                            onClick={() => handleClick("details")}
+                        >Details</button>
+                    </div>
+                ) : (
+                    <div className="detailsInfo">
+                        <PokemonDetails details={pokemonData} />
+                        <button
+                            className="detailsButton"
+                            onClick={() => handleClick("stats")}
+                        >Stats</button>
+                    </div>
+                )
             ) : (
                 <p>Loading...</p> 
             )}
-            <button
-                onClick={() => handleClick("stats")}
-            >Stats</button>
         </div>
     )
 }
