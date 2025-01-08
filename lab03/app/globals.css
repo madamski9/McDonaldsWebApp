@@ -130,17 +130,17 @@ nav {
   text-align: center; 
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; 
   background-color: #f9f9f9; 
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) inset; /* Cień dla efektu 3D */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) inset; 
 }
 
 .nav-list a:hover, .nav-list2 a:hover {
   background-color: #eaeaea; 
   color: #000; 
-  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15) inset; /* Większy cień */
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15) inset; 
 }
 .nav-list a:active, .nav-list2 a:active {
   background-color: #dcdcdc; 
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05) inset; /* Wciśnięty cień */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05) inset; 
 }
 
 .nav-list2 a {
@@ -155,7 +155,7 @@ nav {
   text-align: center; 
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; 
   background-color: #f9f9f9; 
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) inset; /* Cień dla efektu 3D */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) inset; 
 }
 
 .star-label {
@@ -199,9 +199,9 @@ nav {
   border: 2px solid #ccc; 
   border-radius: 50px; 
   margin-right: 10px;
-  margin-left: 200px;
+  margin-left: 10px;
   background-color: #f9f9f9; 
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) inset; /* Cień dla efektu wypukłości */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) inset; 
   transition: background-color 0.3s, box-shadow 0.3s; 
 }
 
@@ -263,4 +263,28 @@ nav {
 .detailsInfo {
   display: flex;
   flex-direction: column;
+}
+
+.compareButton {
+  width: 10%;
+  padding: 10px;
+  padding-right: 14px;
+  cursor: pointer;
+  font-size: small;
+  border: 2px solid #ccc; 
+  border-radius: 50px; 
+  background-color: #f9f9f9;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) inset; 
+  transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s; 
+  margin-left: 145px;
+}
+.compareButton:hover {
+  background-color: #eaeaea; 
+  color: #000; 
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15) inset;
+}
+
+.compareButton:active {
+  background-color: #dcdcdc; 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05) inset; 
 }

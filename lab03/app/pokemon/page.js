@@ -5,16 +5,17 @@ import React, { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 
 export default function PokemonPage() {
-    const [pokemonList, setPokemonList] = useState([]) 
-    const [offsetValue, setOffsetValue] = useState(0) 
-    const [filteredPokemonList, setFilteredPokemonList] = useState([]) 
-    const [inputValue, setInputValue] = useState("") 
+    const [pokemonList, setPokemonList] = useState([])
+    const [offsetValue, setOffsetValue] = useState(0)
+    const [filteredPokemonList, setFilteredPokemonList] = useState([])
+    const [inputValue, setInputValue] = useState("")
     const [inputLimitValue, setInputLimitValue] = useState("")
     const params = useSearchParams()
-    const type = params.get("type") 
+    const type = params.get("type")
     const search = params.get("search") 
     const limit = parseInt(params.get("limit") || "21", 10)
     const sort = params.get("sort")
+    const compare = params.get("compare")
 
     const fetchPokemonList = async (offset, type, limit) => {
         try {
@@ -65,7 +66,6 @@ export default function PokemonPage() {
             pokemon.name?.toLowerCase().includes(query)
         )
         setFilteredPokemonList(filtered)
-
         const params = new URLSearchParams(window.location.search)
         params.set("search", query)
         const newUrl = `${window.location.pathname}?${params.toString()}`
@@ -84,6 +84,15 @@ export default function PokemonPage() {
 
     const handleClickLeft = () => (offsetValue > 0) ? setOffsetValue(offsetValue - limit) : null
     const handleClickRight = () => setOffsetValue(offsetValue + limit)
+
+    const handleClickCompare = (state) => {
+        console.log("compare dziala")
+        const params = new URLSearchParams(window.location.search)
+        params.set("compare", state)
+        const newUrl = `${window.location.pathname}?${params.toString()}`
+        window.history.replaceState({}, "", newUrl)
+    }
+    
     useEffect(() => { fetchPokemonList(offsetValue, type, limit) }, [offsetValue, type, limit])
 
     useEffect(() => {
@@ -104,6 +113,12 @@ export default function PokemonPage() {
     return (
         <div className="header">
             <div>
+                <button
+                    className="compareButton"
+                    onClick={() => handleClickCompare("true")}
+                >
+                    Porownaj
+                </button>
                 <input
                     className="input"
                     type="text"
