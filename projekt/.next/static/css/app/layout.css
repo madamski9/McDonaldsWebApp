@@ -8,16 +8,21 @@ body {
 }
 .navigation {
   display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   background-color: #fff;
-  border-bottom: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 3;
 }
 
 .logo img {
   height: 50px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .search-bar input {
@@ -25,6 +30,10 @@ body {
   font-size: 16px;
   border-radius: 20px;
   border: 1px solid rgb(189, 189, 189);
+}
+
+.menu {
+  flex: 1 1;
 }
 
 .menu ul {
@@ -37,11 +46,24 @@ body {
   text-decoration: none;
   color: #000;
   font-size: 18px;
-  cursor: pointer;
+}
+
+.logo {
+  flex: 1 1;
+  text-align: center;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.user-profile {
+  flex: 1 1;
+  text-align: right;
 }
 
 .user-profile img {
-  height: 20px;
+  height: 25px;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -111,7 +133,7 @@ body {
   background: url('/path/to/hero-image.jpg') no-repeat center center/cover;
   color: #fff;
   text-align: center;
-  padding: 100px 20px;
+  padding: 0px 20px;
 }
 
 .hero-section h1 {
@@ -125,12 +147,17 @@ body {
 }
 
 .order-now-btn {
+  position: absolute;
+  bottom: 250px;
+  left: 30%;
+  transform: translateX(-50%);
   background-color: #ffcc00;
   color: #333;
-  padding: 10px 20px;
+  padding: 20px 100px;
   font-size: 18px;
   border: none;
   cursor: pointer;
+  border-radius: 30px;
 }
 
 .order-now-btn:hover {
@@ -146,6 +173,8 @@ body {
 .feature {
   text-align: center;
   max-width: 300px;
+  transition: transform 0.2s;
+  cursor: pointer;
 }
 
 .feature img {
@@ -154,13 +183,69 @@ body {
   border-radius: 10px;
   margin-bottom: 20px;
 }
-
+.feature:hover {
+  transform: scale(1.05);
+}
 .feature h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
-
+.feature.two {
+  margin-top: 40px;
+}
+.feature.three {
+  margin-top: 30px;
+}
 .feature p {
   font-size: 16px;
   color: #666;
+}
+.order-page {
+  padding: 20px;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.grid-item {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+}
+
+.grid-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.grid-item p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+.banner-container {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
