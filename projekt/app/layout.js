@@ -1,18 +1,17 @@
-import "./globals.css"
 import Navigation from "./components/Navigation"
+import Footer from "./components/Footer"
+import "../styles/globals.css"
 
-export default function RootLayout({ children }) {
+const Layout = ({ children }) => {
   return (
-    <html lang="en">
+    <html lang="pl">
       <body>
-        <header className="header">
-          <h1>Pokemon Api</h1>
-          <nav>
-            <Navigation />
-          </nav>
-        </header>
-        <main>{children}</main>
+        <Navigation/>
+        {children}
+        <Footer/>
       </body>
     </html>
   )
 }
+
+export default Layout
