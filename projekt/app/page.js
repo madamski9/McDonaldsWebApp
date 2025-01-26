@@ -1,4 +1,5 @@
 import OrderButton from "./components/OrderButton"
+import MenuButton from "./components/MenuButton"
 
 const HomePage = () => {
   return (
@@ -6,15 +7,13 @@ const HomePage = () => {
       <header className="hero-section">
         <div className="banner-container">
           <img className="banner" src="/images/mcbanner.png"/>
+            <div className="banner-title">McDonald's</div>
+            <div className="banner-info">Your favorite place for delicious food and great moments.</div>
             <OrderButton />
         </div>
       </header>
       <section className="features-section">
-        <div className="feature one">
-          <img src="/images/menu.jpeg" alt="Feature 1" />
-          <h2>Our Menu</h2>
-          <p>Explore our wide range of delicious meals and beverages.</p>
-        </div>
+        <MenuButton />
         <div className="feature two">
           <img src="/images/special2.png" alt="Feature 2" />
           <h2>Special Offers</h2>

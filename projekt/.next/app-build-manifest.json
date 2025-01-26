@@ -11,10 +11,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/order/page": [
+    "/menu/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/order/page.js"
+      "static/chunks/app/menu/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
