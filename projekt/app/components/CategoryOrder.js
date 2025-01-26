@@ -1,11 +1,10 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import FetchProducts from "./FetchProducts"
 
-const CategoryOrder = () => {
+const CategoryOrder = ({ setCategoryClicked }) => {
     const [products, setProducts] = useState([])
     const [categoryImages, setCategoryImages] = useState([])
-    const [categoryClicked, setCategoryClicked] = useState(false)
 
     useEffect(() => {
         const getProducts = async () => {
@@ -16,13 +15,15 @@ const CategoryOrder = () => {
         getProducts()
     }, [])
 
+    const categories = useMemo(() => Object.keys(products), [products])
+
     return (
         <div className="category-order-main">
-            {Object.keys(products).map(category => (
+            {categories.map(category => (
                 <div 
                     key={category} 
                     className="category-order-item"
-                    onClick={() => setCategoryClicked(!categoryClicked)}
+                    onClick={() => setCategoryClicked(category)}
                 >
                     <img src={categoryImages[category]} alt={category} />
                     <div>{category}</div>

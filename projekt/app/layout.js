@@ -1,14 +1,17 @@
 import Navigation from "./components/Navigation"
 import Footer from "./components/Footer"
+import { CartProvider } from "./context/CartProvider"
 import "../styles/globals.css"
 
 const Layout = ({ children }) => {
   return (
     <html lang="pl">
       <body>
-        <Navigation/>
-        {children}
-        <Footer/>
+        <CartProvider>
+          <Navigation/>
+          {children}
+          <Footer/>
+        </CartProvider>
       </body>
     </html>
   )

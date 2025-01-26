@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback, useMemo } from "react"
 import { useRouter } from "next/navigation"
 import FetchProducts from "./FetchProducts"
 
@@ -15,25 +15,29 @@ const Products = () => {
         getProducts()
     }, [])
 
-    const handleItemClick = (id) => {
+    const handleItemClick = useCallback((id) => {
         router.push(`/menu/${id}`)
-    }
-    console.log("chuj", products)
+    }, [router])
+
+    const processedProducts = useMemo(() => {
+        if (!products || Object.keys(products).length === 0) return []
+        return Object.keys(products).flatMap(category => 
+            Array.isArray(products[category]) ? products[category] : []
+        )
+    }, [products])
 
     return (
         <div className="order-page">
             <div className="grid-container">
-                {Object.keys(products).map(category => (
-                    Array.isArray(products[category]) && products[category].map(product => (
-                        <div 
-                            key={product.id} 
-                            className="grid-item"
-                            onClick={() => handleItemClick(product.id)}
-                        >
-                            <img src={product.image} alt={product.name} />
-                            <div>{product.name}</div>
-                        </div>
-                    ))
+                {processedProducts.map(product => (
+                    <div 
+                        key={product.id} 
+                        className="grid-item"
+                        onClick={() => handleItemClick(product.id)}
+                    >
+                        <img src={product.image} alt={product.name} />
+                        <div>{product.name}</div>
+                    </div>
                 ))}
             </div>
         </div>
