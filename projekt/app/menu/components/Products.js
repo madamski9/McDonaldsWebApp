@@ -28,19 +28,23 @@ const Products = () => {
         fetchProducts()
     }, [])
 
+    console.log(products)
+
     return (
         <div className="order-page">
             <div className="grid-container">
-                {products.map(item => (
-                    <div 
-                        key={item.id} 
-                        className="grid-item"
-                        onClick={() => handleItemClick(item.id)}
-                    >
-                        <img src={item.image} alt={item.name} />
-                        <div>{item.name}</div>
-                    </div>
-                ))}
+                {Object.keys(products).map(category => (
+                    products[category].map(product => (
+                        <div 
+                            key={product.id} 
+                            className="grid-item"
+                            onClick={() => handleItemClick(product.id)}
+                        >
+                            <img src={product.image} alt={product.name} />
+                            <div>{product.name}</div>
+                        </div>
+                        ))
+                    ))}
             </div>
         </div>
     )

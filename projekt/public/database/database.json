@@ -1,182 +1,389 @@
-[
-    {
-        "id": 1,
-        "name": "Big Mac",
-        "price": "3.99 €",
-        "image": "/images/bigmac.png"
-    },
-    {
-        "id": 2,
-        "name": "McChicken",
-        "price": "1.29 €",
-        "image": "/images/mcchicken.png"
-    },
-    {
-        "id": 3,
-        "name": "Filet-O-Fish",
-        "price": "3.79 €",
-        "image": "/images/filetofish.jpeg"
-    },
-    {
-        "id": 4,
-        "name": "Quarter Pounder with Cheese",
-        "price": "3.79 €",
-        "image": "/images/quarterpounder.avif"
-    },
-    {
-        "id": 5,
-        "name": "Double Cheeseburger",
-        "price": "1.69 €",
-        "image": "/images/doublecheese.jpeg"
-    },
-    {
-        "id": 6,
-        "name": "Chicken McNuggets",
-        "price": "4.49 €",
-        "image": "/images/mcnuggets.png"
-    },
-    {
-        "id": 7,
-        "name": "Egg McMuffin",
-        "price": "2.79 €",
-        "image": "/images/eggmcmufin.jpeg"
-    },
-    {
-        "id": 8,
-        "name": "McWrap",
-        "price": "4.99 €",
-        "image": "/images/mcwrap.png"
-    },
-    {
-        "id": 9,
-        "name": "French Fries (Small)",
-        "price": "1.39 €",
-        "image": "/images/friessmall.jpeg"
-    },
-    {
-        "id": 10,
-        "name": "French Fries (Medium)",
-        "price": "1.79 €",
-        "image": "/images/friesmedium.jpeg"
-    },
-    {
-        "id": 11,
-        "name": "French Fries (Large)",
-        "price": "1.89 €",
-        "image": "/images/frieslarge.png"
-    },
-    {
-        "id": 12,
-        "name": "Hotcakes",
-        "price": "2.49 €",
-        "image": "/images/hotcakes.avif"
-    },
-    {
-        "id": 13,
-        "name": "Hash Browns",
-        "price": "1.09 €",
-        "image": "/images/hashbrown.jpeg"
-    },
-    {
-        "id": 14,
-        "name": "Sausage Burrito",
-        "price": "1.29 €",
-        "image": "/images/bfburrito.jpeg"
-    },
-    {
-        "id": 15,
-        "name": "McGriddles",
-        "price": "2.79 €",
-        "image": "/images/mcgriddles.avif"
-    },
-    {
-        "id": 16,
-        "name": "Bacon, Egg & Cheese McGriddles",
-        "price": "3.29 €",
-        "image": "/images/mcgriddlesegg.avif"
-    },
-    {
-        "id": 17,
-        "name": "Sausage, Egg & Cheese McGriddles",
-        "price": "3.29 €",
-        "image": "/images/mcgriddlesegg.avif"
-    },
-    {
-        "id": 18,
-        "name": "Fruit & Maple Oatmeal",
-        "price": "2.49 €",
-        "image": "/images/oat.jpeg"
-    },
-    {
-        "id": 19,
-        "name": "Chicken Sandwich",
-        "price": "4.49 €",
-        "image": "/images/mcchicken.png"
-    },
-    {
-        "id": 20,
-        "name": "Double Quarter Pounder with Cheese",
-        "price": "5.29 €",
-        "image": "/images/doublequater.jpeg"
-    },
-    {
-        "id": 21,
-        "name": "Vanilla Cone",
-        "price": "1.29 €",
-        "image": "/images/lod.avif"
-    },
-    {
-        "id": 22,
-        "name": "Strawberry Shake",
-        "price": "2.99 €",
-        "image": "/images/szejktruskawka.jpeg"
-    },
-    {
-        "id": 23,
-        "name": "Chocolate Shake",
-        "price": "2.99 €",
-        "image": "/images/chocolateshake.avif"
-    },
-    {
-        "id": 24,
-        "name": "Vanilla Shake",
-        "price": "2.99 €",
-        "image": "/images/vanila.jpeg"
-    },
-    {
-        "id": 25,
-        "name": "Hot Fudge Sundae",
-        "price": "1.49 €",
-        "image": "/images/fudge.avif"
-    },
-    {
-        "id": 26,
-        "name": "Hot Caramel Sundae",
-        "price": "1.49 €",
-        "image": "/images/caramel.avif"
-    },
-    {
-        "id": 27,
-        "name": "Baked Apple Pie",
-        "price": "1.29 €",
-        "image": "/images/applepie.jpeg"
-    },
-    {
-        "id": 28,
-        "name": "Chocolate Chip Cookie",
-        "price": "0.99 €",
-        "image": "/images/chip2.jpeg"
-    },
-    {
-        "id": 29,
-        "name": "Oatmeal Raisin Cookie",
-        "price": "0.99 €",
-        "image": "/images/chip.avif"
-    },
-    {
-        "id": 30,
-        "name": "Soft Baked Chocolate Chip Cookie",
-        "price": "1.29 €",
-        "image": "/images/chip2.jpeg"
-    }
-]
+{
+    "burgers": [
+        {
+            "id": 1,
+            "name": "Big Mac",
+            "price": "3.99 €",
+            "image": "/images/bigmac.png",
+            "nutrition": {
+                "calories": 550,
+                "fat": "30g",
+                "carbohydrates": "45g",
+                "protein": "25g"
+            },
+            "allergens": ["gluten", "soy", "milk"]
+        },
+        {
+            "id": 2,
+            "name": "McChicken",
+            "price": "1.29 €",
+            "image": "/images/mcchicken.png",
+            "nutrition": {
+                "calories": 400,
+                "fat": "22g",
+                "carbohydrates": "39g",
+                "protein": "14g"
+            },
+            "allergens": ["gluten", "soy", "egg"]
+        },
+        {
+            "id": 3,
+            "name": "Filet-O-Fish",
+            "price": "3.79 €",
+            "image": "/images/filetofish.jpeg",
+            "nutrition": {
+                "calories": 380,
+                "fat": "18g",
+                "carbohydrates": "38g",
+                "protein": "15g"
+            },
+            "allergens": ["gluten", "fish", "milk"]
+        },
+        {
+            "id": 4,
+            "name": "Quarter Pounder with Cheese",
+            "price": "3.79 €",
+            "image": "/images/quarterpounder.avif",
+            "nutrition": {
+                "calories": 520,
+                "fat": "26g",
+                "carbohydrates": "42g",
+                "protein": "30g"
+            },
+            "allergens": ["gluten", "soy", "milk"]
+        },
+        {
+            "id": 5,
+            "name": "Double Cheeseburger",
+            "price": "1.69 €",
+            "image": "/images/doublecheese.jpeg",
+            "nutrition": {
+                "calories": 440,
+                "fat": "23g",
+                "carbohydrates": "34g",
+                "protein": "25g"
+            },
+            "allergens": ["gluten", "soy", "milk"]
+        },
+        {
+            "id": 20,
+            "name": "Double Quarter Pounder with Cheese",
+            "price": "5.29 €",
+            "image": "/images/doublequater.jpeg",
+            "nutrition": {
+                "calories": 740,
+                "fat": "42g",
+                "carbohydrates": "43g",
+                "protein": "48g"
+            },
+            "allergens": ["gluten", "soy", "milk"]
+        }
+    ],
+    "wraps": [
+        {
+            "id": 8,
+            "name": "McWrap",
+            "price": "4.99 €",
+            "image": "/images/mcwrap.png",
+            "nutrition": {
+                "calories": 500,
+                "fat": "25g",
+                "carbohydrates": "45g",
+                "protein": "25g"
+            },
+            "allergens": ["gluten", "soy", "milk"]
+        },
+        {
+            "id": 14,
+            "name": "Sausage Burrito",
+            "price": "1.29 €",
+            "image": "/images/bfburrito.jpeg",
+            "nutrition": {
+                "calories": 300,
+                "fat": "16g",
+                "carbohydrates": "26g",
+                "protein": "12g"
+            },
+            "allergens": ["gluten", "egg", "milk"]
+        }
+    ],
+    "breakfast": [
+        {
+            "id": 7,
+            "name": "Egg McMuffin",
+            "price": "2.79 €",
+            "image": "/images/eggmcmufin.jpeg",
+            "nutrition": {
+                "calories": 300,
+                "fat": "12g",
+                "carbohydrates": "30g",
+                "protein": "18g"
+            },
+            "allergens": ["gluten", "egg", "milk"]
+        },
+        {
+            "id": 12,
+            "name": "Hotcakes",
+            "price": "2.49 €",
+            "image": "/images/hotcakes.avif",
+            "nutrition": {
+                "calories": 350,
+                "fat": "9g",
+                "carbohydrates": "61g",
+                "protein": "8g"
+            },
+            "allergens": ["gluten", "egg", "milk"]
+        },
+        {
+            "id": 13,
+            "name": "Hash Browns",
+            "price": "1.09 €",
+            "image": "/images/hashbrown.jpeg",
+            "nutrition": {
+                "calories": 150,
+                "fat": "9g",
+                "carbohydrates": "15g",
+                "protein": "1g"
+            },
+            "allergens": ["none"]
+        },
+        {
+            "id": 15,
+            "name": "McGriddles",
+            "price": "2.79 €",
+            "image": "/images/mcgriddles.avif",
+            "nutrition": {
+                "calories": 430,
+                "fat": "20g",
+                "carbohydrates": "45g",
+                "protein": "15g"
+            },
+            "allergens": ["gluten", "egg", "milk"]
+        },
+        {
+            "id": 16,
+            "name": "Bacon, Egg & Cheese McGriddles",
+            "price": "3.29 €",
+            "image": "/images/mcgriddlesegg.avif",
+            "nutrition": {
+                "calories": 420,
+                "fat": "21g",
+                "carbohydrates": "44g",
+                "protein": "17g"
+            },
+            "allergens": ["gluten", "egg", "milk"]
+        },
+        {
+            "id": 17,
+            "name": "Sausage, Egg & Cheese McGriddles",
+            "price": "3.29 €",
+            "image": "/images/mcgriddlesegg.avif",
+            "nutrition": {
+                "calories": 550,
+                "fat": "33g",
+                "carbohydrates": "45g",
+                "protein": "20g"
+            },
+            "allergens": ["gluten", "egg", "milk"]
+        },
+        {
+            "id": 18,
+            "name": "Fruit & Maple Oatmeal",
+            "price": "2.49 €",
+            "image": "/images/oat.jpeg",
+            "nutrition": {
+                "calories": 320,
+                "fat": "4g",
+                "carbohydrates": "64g",
+                "protein": "6g"
+            },
+            "allergens": ["gluten"]
+        }
+    ],
+    "sides": [
+        {
+            "id": 6,
+            "name": "Chicken McNuggets",
+            "price": "4.49 €",
+            "image": "/images/mcnuggets.png",
+            "nutrition": {
+                "calories": 300,
+                "fat": "20g",
+                "carbohydrates": "15g",
+                "protein": "15g"
+            },
+            "allergens": ["gluten", "soy"]
+        },
+        {
+            "id": 9,
+            "name": "French Fries (Small)",
+            "price": "1.39 €",
+            "image": "/images/friessmall.jpeg",
+            "nutrition": {
+                "calories": 230,
+                "fat": "11g",
+                "carbohydrates": "29g",
+                "protein": "3g"
+            },
+            "allergens": ["none"]
+        },
+        {
+            "id": 10,
+            "name": "French Fries (Medium)",
+            "price": "1.79 €",
+            "image": "/images/friesmedium.jpeg",
+            "nutrition": {
+                "calories": 340,
+                "fat": "17g",
+                "carbohydrates": "44g",
+                "protein": "4g"
+            },
+            "allergens": ["none"]
+        },
+        {
+            "id": 11,
+            "name": "French Fries (Large)",
+            "price": "1.89 €",
+            "image": "/images/frieslarge.png",
+            "nutrition": {
+                "calories": 510,
+                "fat": "24g",
+                "carbohydrates": "66g",
+                "protein": "6g"
+            },
+            "allergens": ["none"]
+        }
+    ],
+    "desserts": [
+        {
+            "id": 21,
+            "name": "Vanilla Cone",
+            "price": "1.29 €",
+            "image": "/images/lod.avif",
+            "nutrition": {
+                "calories": 200,
+                "fat": "5g",
+                "carbohydrates": "32g",
+                "protein": "5g"
+            },
+            "allergens": ["milk"]
+        },
+        {
+            "id": 22,
+            "name": "Strawberry Shake",
+            "price": "2.99 €",
+            "image": "/images/szejktruskawka.jpeg",
+            "nutrition": {
+                "calories": 530,
+                "fat": "15g",
+                "carbohydrates": "85g",
+                "protein": "12g"
+            },
+            "allergens": ["milk"]
+        },
+        {
+            "id": 23,
+            "name": "Chocolate Shake",
+            "price": "2.99 €",
+            "image": "/images/chocolateshake.avif",
+            "nutrition": {
+                "calories": 560,
+                "fat": "16g",
+                "carbohydrates": "90g",
+                "protein": "12g"
+            },
+            "allergens": ["milk"]
+        },
+        {
+            "id": 24,
+            "name": "Vanilla Shake",
+            "price": "2.99 €",
+            "image": "/images/vanila.jpeg",
+            "nutrition": {
+                "calories": 520,
+                "fat": "14g",
+                "carbohydrates": "85g",
+                "protein": "12g"
+            },
+            "allergens": ["milk"]
+        },
+        {
+            "id": 25,
+            "name": "Hot Fudge Sundae",
+            "price": "1.49 €",
+            "image": "/images/fudge.avif",
+            "nutrition": {
+                "calories": 330,
+                "fat": "9g",
+                "carbohydrates": "55g",
+                "protein": "8g"
+            },
+            "allergens": ["milk"]
+        },
+        {
+            "id": 26,
+            "name": "Hot Caramel Sundae",
+            "price": "1.49 €",
+            "image": "/images/caramel.avif",
+            "nutrition": {
+                "calories": 340,
+                "fat": "9g",
+                "carbohydrates": "60g",
+                "protein": "8g"
+            },
+            "allergens": ["milk"]
+        },
+        {
+            "id": 27,
+            "name": "Baked Apple Pie",
+            "price": "1.29 €",
+            "image": "/images/applepie.jpeg",
+            "nutrition": {
+                "calories": 240,
+                "fat": "11g",
+                "carbohydrates": "34g",
+                "protein": "2g"
+            },
+            "allergens": ["gluten"]
+        },
+        {
+            "id": 28,
+            "name": "Chocolate Chip Cookie",
+            "price": "0.99 €",
+            "image": "/images/chip2.jpeg",
+            "nutrition": {
+                "calories": 160,
+                "fat": "8g",
+                "carbohydrates": "22g",
+                "protein": "2g"
+            },
+            "allergens": ["gluten", "milk", "egg"]
+        },
+        {
+            "id": 29,
+            "name": "Oatmeal Raisin Cookie",
+            "price": "0.99 €",
+            "image": "/images/chip.avif",
+            "nutrition": {
+                "calories": 170,
+                "fat": "7g",
+                "carbohydrates": "25g",
+                "protein": "2g"
+            },
+            "allergens": ["gluten", "milk", "egg"]
+        },
+        {
+            "id": 30,
+            "name": "Soft Baked Chocolate Chip Cookie",
+            "price": "1.29 €",
+            "image": "/images/chip2.jpeg",
+            "nutrition": {
+                "calories": 180,
+                "fat": "9g",
+                "carbohydrates": "24g",
+                "protein": "2g"
+            },
+            "allergens": ["gluten", "milk", "egg"]
+        }
+    ]
+}

@@ -281,3 +281,37 @@ body {
   margin-bottom: 40px;
   color: rgb(255, 255, 255);
 }
+.product-detail {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; 
+  padding: 10px;
+  width: 100%;
+  object-fit: contain;
+}
+.product-info {
+  flex: 1 1;
+  padding-right: 20px;
+  margin-left: 90px;
+  font-size: 23px;
+}
+
+.product-image {
+  flex: 1 1;
+  text-align: right;
+  margin-right: 90px;
+}
+.product-image img {
+  align-self: flex-end;
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+.nutrition div, .allergens div {
+  font-size: 18px;
+}
+.nutrition ul, .allergens ul {
+  font-size: 16px;
+  list-style: none;
+}
