@@ -1,4 +1,11 @@
 {
+    "categoryImages": {
+        "burgers": "/images/bigmac.png",
+        "wraps": "/images/mcwrap.png",
+        "breakfast": "/images/eggmcmufin.jpeg",
+        "sides": "/images/friesmedium.jpeg",
+        "desserts": "/images/lod.avif"
+    },
     "burgers": [
         {
             "id": 1,

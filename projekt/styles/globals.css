@@ -310,3 +310,40 @@ body {
   font-size: 16px;
   list-style: none;
 }
+.order-main {
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
+  width: 100%;
+}
+.order-left-column {
+  height: 100vh;
+  background-color:rgb(255, 255, 255);
+}
+.order-right-column {
+  background-color:rgb(234, 234, 234);
+  height: 100vh;
+}
+.category-order-main {
+  display: flex;
+  flex-direction: column; 
+}
+
+.category-order-item {
+  display: flex;
+  flex-direction: row;
+  margin-top: 35px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.category-order-item:hover {
+  transform: scale(1.05);
+}
+.category-order-item img {
+  width: 50%;
+  height: 90px;
+  object-fit: contain;
+}
+.category-order-item div {
+  margin-left: 20px;
+  margin-top: 30px;
+}
