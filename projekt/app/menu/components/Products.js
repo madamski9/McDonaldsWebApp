@@ -1,8 +1,10 @@
 "use client"
 import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
 
 const Products = () => {
     const [products, setProducts] = useState([])
+    const router = useRouter()
 
     const fetchProducts = async () => {
         try {
@@ -18,6 +20,10 @@ const Products = () => {
         }
     }
 
+    const handleItemClick = (id) => {
+        router.push(`/menu/${id}`)
+    }
+
     useEffect(() => {
         fetchProducts()
     }, [])
@@ -26,7 +32,11 @@ const Products = () => {
         <div className="order-page">
             <div className="grid-container">
                 {products.map(item => (
-                    <div key={item.id} className="grid-item">
+                    <div 
+                        key={item.id} 
+                        className="grid-item"
+                        onClick={() => handleItemClick(item.id)}
+                    >
                         <img src={item.image} alt={item.name} />
                         <div>{item.name}</div>
                     </div>

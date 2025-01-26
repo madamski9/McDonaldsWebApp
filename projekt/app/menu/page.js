@@ -1,6 +1,6 @@
 import Products from "./components/Products"
 
-const Order = () => {
+const Menu = () => {
     return (
         <div>
             <Products/>
@@ -8,4 +8,4 @@ const Order = () => {
     )
 }
 
-export default Order
+export default Menu

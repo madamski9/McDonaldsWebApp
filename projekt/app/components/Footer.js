@@ -16,7 +16,7 @@ const Footer = () =>{
                 </div>
             </div>
             <div className="footer-bottom">
-                &copy; {new Date().getFullYear()} McDonald's. All rights reserved.
+                &copy; 2025 McDonald's. All rights reserved.
             </div>
         </footer>
     )

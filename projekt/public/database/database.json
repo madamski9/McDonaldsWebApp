@@ -93,7 +93,7 @@
         "id": 16,
         "name": "Bacon, Egg & Cheese McGriddles",
         "price": "3.29 €",
-        "image": "/images/mcgriddles.avif"
+        "image": "/images/mcgriddlesegg.avif"
     },
     {
         "id": 17,
@@ -123,7 +123,7 @@
         "id": 21,
         "name": "Vanilla Cone",
         "price": "1.29 €",
-        "image": "/images/vanila.jpeg"
+        "image": "/images/lod.avif"
     },
     {
         "id": 22,
