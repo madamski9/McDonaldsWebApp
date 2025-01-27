@@ -455,7 +455,7 @@
             "id": 23,
             "name": "Chocolate Shake",
             "price": "2.49 €",
-            "image": "/images/chocolateshake.jpeg",
+            "image": "/images/chocolateshake.avif",
             "nutrition": {
                 "calories": 530,
                 "fat": "15g",
@@ -474,7 +474,7 @@
             "id": 24,
             "name": "Strawberry Sundae",
             "price": "1.99 €",
-            "image": "/images/strawberrysundae.jpeg",
+            "image": "/images/szejktruskawka.jpeg",
             "nutrition": {
                 "calories": 280,
                 "fat": "7g",
@@ -486,6 +486,122 @@
                 "strawberry syrup": 1,
                 "ice cream": 1,
                 "whipped cream": 1
+            }
+        },
+        {
+            "id": 25,
+            "name": "Vanilla Shake",
+            "price": "2.99 €",
+            "image": "/images/vanila.jpeg",
+            "nutrition": {
+                "calories": 520,
+                "fat": "14g",
+                "carbohydrates": "85g",
+                "protein": "12g"
+            },
+            "allergens": ["milk"],
+            "ingredients": {
+                "vanilla syrup": 1,
+                "milk": 1,
+                "ice cream": 1,
+                "whipped cream": 1
+            }
+        },
+        {
+            "id": 26,
+            "name": "Hot Fudge Sundae",
+            "price": "1.49 €",
+            "image": "/images/fudge.avif",
+            "nutrition": {
+                "calories": 330,
+                "fat": "9g",
+                "carbohydrates": "55g",
+                "protein": "8g"
+            },
+            "allergens": ["milk"],
+                "ingredients": {
+                "hot fudge": 1,
+                "ice cream": 1,
+                "whipped cream": 1
+            }
+        },
+        {
+            "id": 27,
+            "name": "Hot Caramel Sundae",
+            "price": "1.49 €",
+            "image": "/images/caramel.avif",
+            "nutrition": {
+                "calories": 340,
+                "fat": "9g",
+                "carbohydrates": "60g",
+                "protein": "8g"
+            },
+                "allergens": ["milk"],
+                "ingredients": {
+                "hot caramel": 1,
+                "ice cream": 1,
+                "whipped cream": 1
+            }
+        },
+        {
+            "id": 28,
+            "name": "Chocolate Chip Cookie",
+            "price": "0.99 €",
+            "image": "/images/chip2.jpeg",
+            "nutrition": {
+                "calories": 160,
+                "fat": "8g",
+                "carbohydrates": "22g",
+                "protein": "2g"
+            },
+            "allergens": ["gluten", "milk", "egg"],
+            "ingredients": {
+                "chocolate chips": 1,
+                "flour": 1,
+                "sugar": 1,
+                "butter": 1,
+                "egg": 1
+            }
+        },
+        {
+            "id": 29,
+            "name": "Oatmeal Raisin Cookie",
+            "price": "0.99 €",
+            "image": "/images/chip.avif",
+            "nutrition": {
+                "calories": 170,
+                "fat": "7g",
+                "carbohydrates": "25g",
+                "protein": "2g"
+            },
+            "allergens": ["gluten", "milk", "egg"],
+            "ingredients": {
+                "oats": 1,
+                "raisins": 1,
+                "flour": 1,
+                "sugar": 1,
+                "butter": 1,
+                "egg": 1
+            }
+        },
+        {
+            "id": 30,
+            "name": "Soft Baked Chocolate Chip Cookie",
+            "price": "1.29 €",
+            "image": "/images/chip2.jpeg",
+            "nutrition": {
+                "calories": 180,
+                "fat": "9g",
+                "carbohydrates": "24g",
+                "protein": "2g"
+            },
+            "allergens": ["gluten", "milk", "egg"],
+            "ingredients": {
+                "chocolate chips": 1,
+                "flour": 1,
+                "sugar": 1,
+                "butter": 1,
+                "egg": 1
             }
         }
     ]

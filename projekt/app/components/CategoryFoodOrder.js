@@ -28,7 +28,15 @@ const CategoryFoodOrder = ({ categoryClicked }) => {
                         {key}: 
                     </div>
                     <div className="ingredient-value">
-                        {product.ingredients[key]}
+                        <p>
+                            {product.ingredients[key]}
+                        </p>
+                        <button
+                            className="num-of-ingredients"
+                        >+</button>
+                        <button
+                            className="num-of-ingredients"
+                        >-</button>
                     </div>
                 </div>
             )
@@ -85,8 +93,8 @@ const CategoryFoodOrder = ({ categoryClicked }) => {
                                 <h3>Ingredients:</h3>
                                 {ingredients}
                             </div>
-                            <button onClick={handleAddToCart}>Add to Cart</button>
-                            <button onClick={() => setFinalAddVisible(false)}>Cancel</button>
+                            <button className="modal-bottom1" onClick={handleAddToCart}>Add to Cart</button>
+                            <button className="modal-bottom2" onClick={() => setFinalAddVisible(false)}>Cancel</button>
                         </div>
                     </div>
                 )}

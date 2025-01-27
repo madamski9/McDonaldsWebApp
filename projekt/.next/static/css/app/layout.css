@@ -402,6 +402,7 @@ body {
 .modal-content {
   background-color: #fff;
   padding: 20px;
+  margin-top: 90px;
   border-radius: 10px;
   text-align: center;
   width: 400px;
@@ -417,7 +418,6 @@ body {
 .modal-content button {
   background-color: #ffcc00;
   border: none;
-  padding: 10px 20px;
   cursor: pointer;
   margin-top: 10px;
 }
@@ -441,6 +441,8 @@ body {
 .ingredients {
   margin-top: 20px;
   text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .ingredient-row {
@@ -451,8 +453,26 @@ body {
 
 .ingredient-key {
   font-weight: bold;
+  margin-top: 15px;
 }
-
 .ingredient-value {
-  margin-right: 60px;
+  display: flex;
+  height: 40px;
+}
+.num-of-ingredients {
+  border: none;
+  width: 40px;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-left: 5px
+}
+.modal-bottom1, .modal-bottom2 {
+  padding: 10px;
+  border-radius: 9px;
+}
+.modal-bottom1 {
+  margin-right: 10px
+}
+.modal-bottom2 {
+  margin-left: 10px
 }
