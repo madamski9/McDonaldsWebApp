@@ -20,15 +20,15 @@
             },
             "allergens": ["gluten", "soy", "milk"],
             "ingredients": {
-                "bun": 1,
-                "beef patty": 2,
-                "lettuce": 1,
-                "cheese": 1,
-                "pickles": 1,
-                "onions": 1,
-                "special sauce": 1,
-                "bacon": 0,
-                "tomato": 0
+                "bun": {"quantity": 1, "price": "0.50 €"},
+                "beef patty": {"quantity": 2, "price": "1.00 €"},
+                "lettuce": {"quantity": 1, "price": "0.20 €"},
+                "cheese": {"quantity": 1, "price": "0.30 €"},
+                "pickles": {"quantity": 1, "price": "0.10 €"},
+                "onions": {"quantity": 1, "price": "0.10 €"},
+                "special sauce": {"quantity": 1, "price": "0.20 €"},
+                "bacon": {"quantity": 0, "price": "1.20 €"},
+                "tomato": {"quantity": 0, "price": "0.80 €"}
             }
         },
         {
@@ -44,12 +44,12 @@
             },
             "allergens": ["gluten", "soy", "egg"],
             "ingredients": {
-                "bun": 1,
-                "chicken patty": 1,
-                "lettuce": 1,
-                "mayonnaise": 1,
-                "bacon": 0,
-                "cheese": 0
+                "bun": {"quantity": 1, "price": "0.50 €"},
+                "chicken patty": {"quantity": 1, "price": "0.80 €"},
+                "lettuce": {"quantity": 1, "price": "0.20 €"},
+                "mayonnaise": {"quantity": 1, "price": "0.10 €"},
+                "bacon": {"quantity": 0, "price": "1.50 €"},
+                "cheese": {"quantity": 0, "price": "1.00 €"}
             }
         },
         {
@@ -65,12 +65,12 @@
             },
             "allergens": ["gluten", "fish", "milk"],
             "ingredients": {
-                "bun": 1,
-                "fish patty": 1,
-                "cheese": 1,
-                "tartar sauce": 1,
-                "lettuce": 0,
-                "tomato": 0
+                "bun": {"quantity": 1, "price": "0.50 €"},
+                "fish patty": {"quantity": 1, "price": "1.00 €"},
+                "cheese": {"quantity": 1, "price": "0.30 €"},
+                "tartar sauce": {"quantity": 1, "price": "0.20 €"},
+                "lettuce": {"quantity": 0, "price": "0.50 €"},
+                "tomato": {"quantity": 0, "price": "0.80 €"}
             }
         },
         {
@@ -86,15 +86,15 @@
             },
             "allergens": ["gluten", "soy", "milk"],
             "ingredients": {
-                "bun": 1,
-                "beef patty": 1,
-                "cheese": 2,
-                "pickles": 1,
-                "onions": 1,
-                "ketchup": 1,
-                "mustard": 1,
-                "bacon": 0,
-                "lettuce": 0
+                "bun": {"quantity": 1, "price": "0.50 €"},
+                "beef patty": {"quantity": 1, "price": "1.00 €"},
+                "cheese": {"quantity": 2, "price": "0.30 €"},
+                "pickles": {"quantity": 1, "price": "0.10 €"},
+                "onions": {"quantity": 1, "price": "0.10 €"},
+                "ketchup": {"quantity": 1, "price": "0.05 €"},
+                "mustard": {"quantity": 1, "price": "0.05 €"},
+                "bacon": {"quantity": 0, "price": "1.20 €"},
+                "lettuce": {"quantity": 0, "price": "0.20 €"}
             }
         },
         {
@@ -110,15 +110,15 @@
             },
             "allergens": ["gluten", "soy", "milk"],
             "ingredients": {
-                "bun": 1,
-                "beef patty": 2,
-                "cheese": 2,
-                "pickles": 1,
-                "onions": 1,
-                "ketchup": 1,
-                "mustard": 1,
-                "bacon": 0,
-                "lettuce": 0
+                "bun": {"quantity": 1, "price": "0.50 €"},
+                "beef patty": {"quantity": 2, "price": "1.00 €"},
+                "cheese": {"quantity": 2, "price": "0.30 €"},
+                "pickles": {"quantity": 1, "price": "0.10 €"},
+                "onions": {"quantity": 1, "price": "0.10 €"},
+                "ketchup": {"quantity": 1, "price": "0.05 €"},
+                "mustard": {"quantity": 1, "price": "0.05 €"},
+                "bacon": {"quantity": 0, "price": "1.20 €"},
+                "lettuce": {"quantity": 0, "price": "0.20 €"}
             }
         },
         {
@@ -134,15 +134,15 @@
             },
             "allergens": ["gluten", "soy", "milk"],
             "ingredients": {
-                "bun": 1,
-                "beef patty": 2,
-                "cheese": 2,
-                "pickles": 1,
-                "onions": 1,
-                "ketchup": 1,
-                "mustard": 1,
-                "bacon": 0,
-                "lettuce": 0
+                "bun": {"quantity": 1, "price": "0.50 €"},
+                "beef patty": {"quantity": 2, "price": "1.00 €"},
+                "cheese": {"quantity": 2, "price": "0.30 €"},
+                "pickles": {"quantity": 1, "price": "0.10 €"},
+                "onions": {"quantity": 1, "price": "0.10 €"},
+                "ketchup": {"quantity": 1, "price": "0.05 €"},
+                "mustard": {"quantity": 1, "price": "0.05 €"},
+                "bacon": {"quantity": 0, "price": "1.20 €"},
+                "lettuce": {"quantity": 0, "price": "0.20 €"}
             }
         }
     ],
@@ -160,13 +160,13 @@
             },
             "allergens": ["gluten", "soy", "milk"],
             "ingredients": {
-                "tortilla": 1,
-                "chicken": 1,
-                "lettuce": 1,
-                "cheese": 1,
-                "ranch sauce": 1,
-                "bacon": 0,
-                "tomato": 0
+                "tortilla": {"quantity": 1, "price": "0.50 €"},
+                "chicken": {"quantity": 1, "price": "1.00 €"},
+                "lettuce": {"quantity": 1, "price": "0.20 €"},
+                "cheese": {"quantity": 1, "price": "0.30 €"},
+                "ranch sauce": {"quantity": 1, "price": "0.20 €"},
+                "bacon": {"quantity": 0, "price": "1.20 €"},
+                "tomato": {"quantity": 0, "price": "0.80 €"}
             }
         },
         {
@@ -182,14 +182,14 @@
             },
             "allergens": ["gluten", "egg", "milk"],
             "ingredients": {
-                "tortilla": 1,
-                "sausage": 1,
-                "scrambled eggs": 1,
-                "cheese": 1,
-                "peppers": 1,
-                "onions": 1,
-                "salsa": 1,
-                "bacon": 0
+                "tortilla": {"quantity": 1, "price": "0.50 €"},
+                "sausage": {"quantity": 1, "price": "1.00 €"},
+                "scrambled eggs": {"quantity": 1, "price": "0.50 €"},
+                "cheese": {"quantity": 1, "price": "0.30 €"},
+                "peppers": {"quantity": 1, "price": "0.20 €"},
+                "onions": {"quantity": 1, "price": "0.10 €"},
+                "salsa": {"quantity": 1, "price": "0.20 €"},
+                "bacon": {"quantity": 0, "price": "1.20 €"}
             }
         }
     ],
@@ -207,12 +207,12 @@
             },
             "allergens": ["gluten", "egg", "milk"],
             "ingredients": {
-                "english muffin": 1,
-                "egg": 1,
-                "canadian bacon": 1,
-                "cheese": 1,
-                "butter": 1,
-                "ketchup": 0
+                "english muffin": {"quantity": 1, "price": "0.50 €"},
+                "egg": {"quantity": 1, "price": "0.30 €"},
+                "canadian bacon": {"quantity": 1, "price": "0.50 €"},
+                "cheese": {"quantity": 1, "price": "0.30 €"},
+                "butter": {"quantity": 1, "price": "0.10 €"},
+                "ketchup": {"quantity": 0, "price": "0.05 €"}
             }
         },
         {
@@ -228,11 +228,11 @@
             },
             "allergens": ["gluten", "egg", "milk"],
             "ingredients": {
-                "hotcakes": 3,
-                "syrup": 1,
-                "butter": 1,
-                "strawberries": 0,
-                "whipped cream": 0
+                "hotcakes": {"quantity": 3, "price": "1.50 €"},
+                "syrup": {"quantity": 1, "price": "0.20 €"},
+                "butter": {"quantity": 1, "price": "0.10 €"},
+                "strawberries": {"quantity": 0, "price": "0.50 €"},
+                "whipped cream": {"quantity": 0, "price": "0.30 €"}
             }
         },
         {
@@ -248,10 +248,10 @@
             },
             "allergens": ["none"],
             "ingredients": {
-                "potatoes": 1,
-                "salt": 1,
-                "oil": 1,
-                "ketchup": 0
+                "potatoes": {"quantity": 1, "price": "0.50 €"},
+                "salt": {"quantity": 1, "price": "0.05 €"},
+                "oil": {"quantity": 1, "price": "0.10 €"},
+                "ketchup": {"quantity": 0, "price": "0.05 €"}
             }
         },
         {
@@ -267,11 +267,11 @@
             },
             "allergens": ["gluten", "egg", "milk"],
             "ingredients": {
-                "griddle cakes": 2,
-                "sausage": 1,
-                "egg": 1,
-                "cheese": 1,
-                "bacon": 0
+                "griddle cakes": {"quantity": 2, "price": "1.00 €"},
+                "sausage": {"quantity": 1, "price": "0.80 €"},
+                "egg": {"quantity": 1, "price": "0.30 €"},
+                "cheese": {"quantity": 1, "price": "0.30 €"},
+                "bacon": {"quantity": 0, "price": "1.20 €"}
             }
         },
         {
@@ -287,11 +287,11 @@
             },
             "allergens": ["gluten", "egg", "milk"],
             "ingredients": {
-                "griddle cakes": 2,
-                "bacon": 1,
-                "egg": 1,
-                "cheese": 1,
-                "sausage": 0
+                "griddle cakes": {"quantity": 2, "price": "1.00 €"},
+                "bacon": {"quantity": 1, "price": "1.20 €"},
+                "egg": {"quantity": 1, "price": "0.30 €"},
+                "cheese": {"quantity": 1, "price": "0.30 €"},
+                "sausage": {"quantity": 0, "price": "0.80 €"}
             }
         },
         {
@@ -307,11 +307,11 @@
             },
             "allergens": ["gluten", "egg", "milk"],
             "ingredients": {
-                "griddle cakes": 2,
-                "sausage": 1,
-                "egg": 1,
-                "cheese": 1,
-                "bacon": 0
+                "griddle cakes": {"quantity": 2, "price": "1.00 €"},
+                "sausage": {"quantity": 1, "price": "0.80 €"},
+                "egg": {"quantity": 1, "price": "0.30 €"},
+                "cheese": {"quantity": 1, "price": "0.30 €"},
+                "bacon": {"quantity": 0, "price": "1.20 €"}
             }
         },
         {
@@ -327,12 +327,12 @@
             },
             "allergens": ["gluten"],
             "ingredients": {
-                "oatmeal": 1,
-                "diced apples": 1,
-                "cranberries": 1,
-                "raisins": 1,
-                "brown sugar": 1,
-                "cream": 0
+                "oatmeal": {"quantity": 1, "price": "0.50 €"},
+                "diced apples": {"quantity": 1, "price": "0.30 €"},
+                "cranberries": {"quantity": 1, "price": "0.20 €"},
+                "raisins": {"quantity": 1, "price": "0.20 €"},
+                "brown sugar": {"quantity": 1, "price": "0.10 €"},
+                "cream": {"quantity": 0, "price": "0.20 €"}
             }
         }
     ],
@@ -350,10 +350,10 @@
             },
             "allergens": ["gluten", "soy"],
             "ingredients": {
-                "chicken nuggets": 10,
-                "bbq sauce": 0,
-                "sweet and sour sauce": 0,
-                "honey mustard sauce": 0
+                "chicken nuggets": {"quantity": 10, "price": "2.00 €"},
+                "bbq sauce": {"quantity": 0, "price": "0.20 €"},
+                "sweet and sour sauce": {"quantity": 0, "price": "0.20 €"},
+                "honey mustard sauce": {"quantity": 0, "price": "0.20 €"}
             }
         },
         {
@@ -369,10 +369,10 @@
             },
             "allergens": ["none"],
             "ingredients": {
-                "potatoes": 1,
-                "salt": 1,
-                "oil": 1,
-                "ketchup": 0
+                "potatoes": {"quantity": 1, "price": "0.50 €"},
+                "salt": {"quantity": 1, "price": "0.05 €"},
+                "oil": {"quantity": 1, "price": "0.10 €"},
+                "ketchup": {"quantity": 0, "price": "0.05 €"}
             }
         },
         {
@@ -388,10 +388,10 @@
             },
             "allergens": ["none"],
             "ingredients": {
-                "potatoes": 1,
-                "salt": 1,
-                "oil": 1,
-                "ketchup": 0
+                "potatoes": {"quantity": 1, "price": "0.50 €"},
+                "salt": {"quantity": 1, "price": "0.05 €"},
+                "oil": {"quantity": 1, "price": "0.10 €"},
+                "ketchup": {"quantity": 0, "price": "0.05 €"}
             }
         },
         {
@@ -407,10 +407,10 @@
             },
             "allergens": ["none"],
             "ingredients": {
-                "potatoes": 1,
-                "salt": 1,
-                "oil": 1,
-                "ketchup": 0
+                "potatoes": {"quantity": 1, "price": "0.50 €"},
+                "salt": {"quantity": 1, "price": "0.05 €"},
+                "oil": {"quantity": 1, "price": "0.10 €"},
+                "ketchup": {"quantity": 0, "price": "0.05 €"}
             }
         }
     ],
@@ -428,8 +428,8 @@
             },
             "allergens": ["milk"],
             "ingredients": {
-                "vanilla ice cream": 1,
-                "cone": 1
+                "vanilla ice cream": {"quantity": 1, "price": "0.50 €"},
+                "cone": {"quantity": 1, "price": "0.20 €"}
             }
         },
         {
@@ -445,10 +445,10 @@
             },
             "allergens": ["gluten"],
             "ingredients": {
-                "apples": 1,
-                "pastry": 1,
-                "cinnamon": 1,
-                "sugar": 1
+                "apples": {"quantity": 1, "price": "0.30 €"},
+                "pastry": {"quantity": 1, "price": "0.50 €"},
+                "cinnamon": {"quantity": 1, "price": "0.10 €"},
+                "sugar": {"quantity": 1, "price": "0.05 €"}
             }
         },
         {
@@ -464,10 +464,10 @@
             },
             "allergens": ["milk"],
             "ingredients": {
-                "chocolate syrup": 1,
-                "milk": 1,
-                "ice cream": 1,
-                "whipped cream": 1
+                "chocolate syrup": {"quantity": 1, "price": "0.20 €"},
+                "milk": {"quantity": 1, "price": "0.50 €"},
+                "ice cream": {"quantity": 1, "price": "0.50 €"},
+                "whipped cream": {"quantity": 1, "price": "0.30 €"}
             }
         },
         {
@@ -483,9 +483,9 @@
             },
             "allergens": ["milk"],
             "ingredients": {
-                "strawberry syrup": 1,
-                "ice cream": 1,
-                "whipped cream": 1
+                "strawberry syrup": {"quantity": 1, "price": "0.20 €"},
+                "ice cream": {"quantity": 1, "price": "0.50 €"},
+                "whipped cream": {"quantity": 1, "price": "0.30 €"}
             }
         },
         {
@@ -501,10 +501,10 @@
             },
             "allergens": ["milk"],
             "ingredients": {
-                "vanilla syrup": 1,
-                "milk": 1,
-                "ice cream": 1,
-                "whipped cream": 1
+                "vanilla syrup": {"quantity": 1, "price": "0.20 €"},
+                "milk": {"quantity": 1, "price": "0.50 €"},
+                "ice cream": {"quantity": 1, "price": "0.50 €"},
+                "whipped cream": {"quantity": 1, "price": "0.30 €"}
             }
         },
         {
@@ -519,10 +519,10 @@
                 "protein": "8g"
             },
             "allergens": ["milk"],
-                "ingredients": {
-                "hot fudge": 1,
-                "ice cream": 1,
-                "whipped cream": 1
+            "ingredients": {
+                "hot fudge": {"quantity": 1, "price": "0.20 €"},
+                "ice cream": {"quantity": 1, "price": "0.50 €"},
+                "whipped cream": {"quantity": 1, "price": "0.30 €"}
             }
         },
         {
@@ -536,11 +536,11 @@
                 "carbohydrates": "60g",
                 "protein": "8g"
             },
-                "allergens": ["milk"],
-                "ingredients": {
-                "hot caramel": 1,
-                "ice cream": 1,
-                "whipped cream": 1
+            "allergens": ["milk"],
+            "ingredients": {
+                "hot caramel": {"quantity": 1, "price": "0.20 €"},
+                "ice cream": {"quantity": 1, "price": "0.50 €"},
+                "whipped cream": {"quantity": 1, "price": "0.30 €"}
             }
         },
         {
@@ -556,11 +556,11 @@
             },
             "allergens": ["gluten", "milk", "egg"],
             "ingredients": {
-                "chocolate chips": 1,
-                "flour": 1,
-                "sugar": 1,
-                "butter": 1,
-                "egg": 1
+                "chocolate chips": {"quantity": 1, "price": "0.20 €"},
+                "flour": {"quantity": 1, "price": "0.10 €"},
+                "sugar": {"quantity": 1, "price": "0.05 €"},
+                "butter": {"quantity": 1, "price": "0.10 €"},
+                "egg": {"quantity": 1, "price": "0.10 €"}
             }
         },
         {
@@ -576,12 +576,12 @@
             },
             "allergens": ["gluten", "milk", "egg"],
             "ingredients": {
-                "oats": 1,
-                "raisins": 1,
-                "flour": 1,
-                "sugar": 1,
-                "butter": 1,
-                "egg": 1
+                "oats": {"quantity": 1, "price": "0.20 €"},
+                "raisins": {"quantity": 1, "price": "0.10 €"},
+                "flour": {"quantity": 1, "price": "0.10 €"},
+                "sugar": {"quantity": 1, "price": "0.05 €"},
+                "butter": {"quantity": 1, "price": "0.10 €"},
+                "egg": {"quantity": 1, "price": "0.10 €"}
             }
         },
         {
@@ -597,11 +597,11 @@
             },
             "allergens": ["gluten", "milk", "egg"],
             "ingredients": {
-                "chocolate chips": 1,
-                "flour": 1,
-                "sugar": 1,
-                "butter": 1,
-                "egg": 1
+                "chocolate chips": {"quantity": 1, "price": "0.20 €"},
+                "flour": {"quantity": 1, "price": "0.10 €"},
+                "sugar": {"quantity": 1, "price": "0.05 €"},
+                "butter": {"quantity": 1, "price": "0.10 €"},
+                "egg": {"quantity": 1, "price": "0.10 €"}
             }
         }
     ]

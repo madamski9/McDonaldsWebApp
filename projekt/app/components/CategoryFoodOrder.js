@@ -28,8 +28,11 @@ const CategoryFoodOrder = ({ categoryClicked }) => {
                         {key}: 
                     </div>
                     <div className="ingredient-value">
+                        <p style={{marginRight: "30px"}}>
+                            {product.ingredients[key].quantity} 
+                        </p>
                         <p>
-                            {product.ingredients[key]}
+                            {product.ingredients[key].price}
                         </p>
                         <button
                             className="num-of-ingredients"
