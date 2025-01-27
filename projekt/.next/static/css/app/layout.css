@@ -380,7 +380,10 @@ body {
   right: 10px;
   top: 80px;
   width: 400px;
-  height: 200px;
+  min-height: 200px;
+  max-height: 450px;
+  overflow-x: hidden;
+  overflow-y: auto;
   background-color: #fff;
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
 }

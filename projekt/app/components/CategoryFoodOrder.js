@@ -5,7 +5,13 @@ import { useCart } from "../context/CartProvider"
 
 const CategoryFoodOrder = ({ categoryClicked }) => {
     const [products, setProducts] = useState([])
-    const { addToCart } = useCart()
+    const [quantity, setQuantity] = useState(0)
+    const { addToCart, cart } = useCart()
+
+    const getProductQuantity = (id) => {
+        const productInCart = cart.find(item => item.id === id)
+        return productInCart ? <span>x{productInCart.quantity}</span> : <div></div>
+    }
 
     useEffect(() => {
         const getProducts = async () => {
@@ -27,6 +33,9 @@ const CategoryFoodOrder = ({ categoryClicked }) => {
                             onClick={() => addToCart(product)}
                         >
                             <img src={product.image} alt={product.name} />
+                            <div>
+                                {getProductQuantity(product.id)}
+                            </div>
                             <div>{product.name}</div>
                             <div>{product.price}</div>
                         </div>
