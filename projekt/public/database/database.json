@@ -18,7 +18,18 @@
                 "carbohydrates": "45g",
                 "protein": "25g"
             },
-            "allergens": ["gluten", "soy", "milk"]
+            "allergens": ["gluten", "soy", "milk"],
+            "ingredients": {
+                "bun": 1,
+                "beef patty": 2,
+                "lettuce": 1,
+                "cheese": 1,
+                "pickles": 1,
+                "onions": 1,
+                "special sauce": 1,
+                "bacon": 0,
+                "tomato": 0
+            }
         },
         {
             "id": 2,
@@ -31,7 +42,15 @@
                 "carbohydrates": "39g",
                 "protein": "14g"
             },
-            "allergens": ["gluten", "soy", "egg"]
+            "allergens": ["gluten", "soy", "egg"],
+            "ingredients": {
+                "bun": 1,
+                "chicken patty": 1,
+                "lettuce": 1,
+                "mayonnaise": 1,
+                "bacon": 0,
+                "cheese": 0
+            }
         },
         {
             "id": 3,
@@ -44,7 +63,15 @@
                 "carbohydrates": "38g",
                 "protein": "15g"
             },
-            "allergens": ["gluten", "fish", "milk"]
+            "allergens": ["gluten", "fish", "milk"],
+            "ingredients": {
+                "bun": 1,
+                "fish patty": 1,
+                "cheese": 1,
+                "tartar sauce": 1,
+                "lettuce": 0,
+                "tomato": 0
+            }
         },
         {
             "id": 4,
@@ -57,7 +84,18 @@
                 "carbohydrates": "42g",
                 "protein": "30g"
             },
-            "allergens": ["gluten", "soy", "milk"]
+            "allergens": ["gluten", "soy", "milk"],
+            "ingredients": {
+                "bun": 1,
+                "beef patty": 1,
+                "cheese": 2,
+                "pickles": 1,
+                "onions": 1,
+                "ketchup": 1,
+                "mustard": 1,
+                "bacon": 0,
+                "lettuce": 0
+            }
         },
         {
             "id": 5,
@@ -70,7 +108,18 @@
                 "carbohydrates": "34g",
                 "protein": "25g"
             },
-            "allergens": ["gluten", "soy", "milk"]
+            "allergens": ["gluten", "soy", "milk"],
+            "ingredients": {
+                "bun": 1,
+                "beef patty": 2,
+                "cheese": 2,
+                "pickles": 1,
+                "onions": 1,
+                "ketchup": 1,
+                "mustard": 1,
+                "bacon": 0,
+                "lettuce": 0
+            }
         },
         {
             "id": 20,
@@ -83,7 +132,18 @@
                 "carbohydrates": "43g",
                 "protein": "48g"
             },
-            "allergens": ["gluten", "soy", "milk"]
+            "allergens": ["gluten", "soy", "milk"],
+            "ingredients": {
+                "bun": 1,
+                "beef patty": 2,
+                "cheese": 2,
+                "pickles": 1,
+                "onions": 1,
+                "ketchup": 1,
+                "mustard": 1,
+                "bacon": 0,
+                "lettuce": 0
+            }
         }
     ],
     "wraps": [
@@ -98,7 +158,16 @@
                 "carbohydrates": "45g",
                 "protein": "25g"
             },
-            "allergens": ["gluten", "soy", "milk"]
+            "allergens": ["gluten", "soy", "milk"],
+            "ingredients": {
+                "tortilla": 1,
+                "chicken": 1,
+                "lettuce": 1,
+                "cheese": 1,
+                "ranch sauce": 1,
+                "bacon": 0,
+                "tomato": 0
+            }
         },
         {
             "id": 14,
@@ -111,7 +180,17 @@
                 "carbohydrates": "26g",
                 "protein": "12g"
             },
-            "allergens": ["gluten", "egg", "milk"]
+            "allergens": ["gluten", "egg", "milk"],
+            "ingredients": {
+                "tortilla": 1,
+                "sausage": 1,
+                "scrambled eggs": 1,
+                "cheese": 1,
+                "peppers": 1,
+                "onions": 1,
+                "salsa": 1,
+                "bacon": 0
+            }
         }
     ],
     "breakfast": [
@@ -126,7 +205,15 @@
                 "carbohydrates": "30g",
                 "protein": "18g"
             },
-            "allergens": ["gluten", "egg", "milk"]
+            "allergens": ["gluten", "egg", "milk"],
+            "ingredients": {
+                "english muffin": 1,
+                "egg": 1,
+                "canadian bacon": 1,
+                "cheese": 1,
+                "butter": 1,
+                "ketchup": 0
+            }
         },
         {
             "id": 12,
@@ -139,7 +226,14 @@
                 "carbohydrates": "61g",
                 "protein": "8g"
             },
-            "allergens": ["gluten", "egg", "milk"]
+            "allergens": ["gluten", "egg", "milk"],
+            "ingredients": {
+                "hotcakes": 3,
+                "syrup": 1,
+                "butter": 1,
+                "strawberries": 0,
+                "whipped cream": 0
+            }
         },
         {
             "id": 13,
@@ -152,7 +246,13 @@
                 "carbohydrates": "15g",
                 "protein": "1g"
             },
-            "allergens": ["none"]
+            "allergens": ["none"],
+            "ingredients": {
+                "potatoes": 1,
+                "salt": 1,
+                "oil": 1,
+                "ketchup": 0
+            }
         },
         {
             "id": 15,
@@ -165,7 +265,14 @@
                 "carbohydrates": "45g",
                 "protein": "15g"
             },
-            "allergens": ["gluten", "egg", "milk"]
+            "allergens": ["gluten", "egg", "milk"],
+            "ingredients": {
+                "griddle cakes": 2,
+                "sausage": 1,
+                "egg": 1,
+                "cheese": 1,
+                "bacon": 0
+            }
         },
         {
             "id": 16,
@@ -178,7 +285,14 @@
                 "carbohydrates": "44g",
                 "protein": "17g"
             },
-            "allergens": ["gluten", "egg", "milk"]
+            "allergens": ["gluten", "egg", "milk"],
+            "ingredients": {
+                "griddle cakes": 2,
+                "bacon": 1,
+                "egg": 1,
+                "cheese": 1,
+                "sausage": 0
+            }
         },
         {
             "id": 17,
@@ -191,7 +305,14 @@
                 "carbohydrates": "45g",
                 "protein": "20g"
             },
-            "allergens": ["gluten", "egg", "milk"]
+            "allergens": ["gluten", "egg", "milk"],
+            "ingredients": {
+                "griddle cakes": 2,
+                "sausage": 1,
+                "egg": 1,
+                "cheese": 1,
+                "bacon": 0
+            }
         },
         {
             "id": 18,
@@ -204,7 +325,15 @@
                 "carbohydrates": "64g",
                 "protein": "6g"
             },
-            "allergens": ["gluten"]
+            "allergens": ["gluten"],
+            "ingredients": {
+                "oatmeal": 1,
+                "diced apples": 1,
+                "cranberries": 1,
+                "raisins": 1,
+                "brown sugar": 1,
+                "cream": 0
+            }
         }
     ],
     "sides": [
@@ -219,7 +348,13 @@
                 "carbohydrates": "15g",
                 "protein": "15g"
             },
-            "allergens": ["gluten", "soy"]
+            "allergens": ["gluten", "soy"],
+            "ingredients": {
+                "chicken nuggets": 10,
+                "bbq sauce": 0,
+                "sweet and sour sauce": 0,
+                "honey mustard sauce": 0
+            }
         },
         {
             "id": 9,
@@ -232,7 +367,13 @@
                 "carbohydrates": "29g",
                 "protein": "3g"
             },
-            "allergens": ["none"]
+            "allergens": ["none"],
+            "ingredients": {
+                "potatoes": 1,
+                "salt": 1,
+                "oil": 1,
+                "ketchup": 0
+            }
         },
         {
             "id": 10,
@@ -245,7 +386,13 @@
                 "carbohydrates": "44g",
                 "protein": "4g"
             },
-            "allergens": ["none"]
+            "allergens": ["none"],
+            "ingredients": {
+                "potatoes": 1,
+                "salt": 1,
+                "oil": 1,
+                "ketchup": 0
+            }
         },
         {
             "id": 11,
@@ -258,7 +405,13 @@
                 "carbohydrates": "66g",
                 "protein": "6g"
             },
-            "allergens": ["none"]
+            "allergens": ["none"],
+            "ingredients": {
+                "potatoes": 1,
+                "salt": 1,
+                "oil": 1,
+                "ketchup": 0
+            }
         }
     ],
     "desserts": [
@@ -273,77 +426,16 @@
                 "carbohydrates": "32g",
                 "protein": "5g"
             },
-            "allergens": ["milk"]
+            "allergens": ["milk"],
+            "ingredients": {
+                "vanilla ice cream": 1,
+                "cone": 1
+            }
         },
         {
             "id": 22,
-            "name": "Strawberry Shake",
-            "price": "2.99 €",
-            "image": "/images/szejktruskawka.jpeg",
-            "nutrition": {
-                "calories": 530,
-                "fat": "15g",
-                "carbohydrates": "85g",
-                "protein": "12g"
-            },
-            "allergens": ["milk"]
-        },
-        {
-            "id": 23,
-            "name": "Chocolate Shake",
-            "price": "2.99 €",
-            "image": "/images/chocolateshake.avif",
-            "nutrition": {
-                "calories": 560,
-                "fat": "16g",
-                "carbohydrates": "90g",
-                "protein": "12g"
-            },
-            "allergens": ["milk"]
-        },
-        {
-            "id": 24,
-            "name": "Vanilla Shake",
-            "price": "2.99 €",
-            "image": "/images/vanila.jpeg",
-            "nutrition": {
-                "calories": 520,
-                "fat": "14g",
-                "carbohydrates": "85g",
-                "protein": "12g"
-            },
-            "allergens": ["milk"]
-        },
-        {
-            "id": 25,
-            "name": "Hot Fudge Sundae",
-            "price": "1.49 €",
-            "image": "/images/fudge.avif",
-            "nutrition": {
-                "calories": 330,
-                "fat": "9g",
-                "carbohydrates": "55g",
-                "protein": "8g"
-            },
-            "allergens": ["milk"]
-        },
-        {
-            "id": 26,
-            "name": "Hot Caramel Sundae",
-            "price": "1.49 €",
-            "image": "/images/caramel.avif",
-            "nutrition": {
-                "calories": 340,
-                "fat": "9g",
-                "carbohydrates": "60g",
-                "protein": "8g"
-            },
-            "allergens": ["milk"]
-        },
-        {
-            "id": 27,
-            "name": "Baked Apple Pie",
-            "price": "1.29 €",
+            "name": "Apple Pie",
+            "price": "1.19 €",
             "image": "/images/applepie.jpeg",
             "nutrition": {
                 "calories": 240,
@@ -351,46 +443,50 @@
                 "carbohydrates": "34g",
                 "protein": "2g"
             },
-            "allergens": ["gluten"]
+            "allergens": ["gluten"],
+            "ingredients": {
+                "apples": 1,
+                "pastry": 1,
+                "cinnamon": 1,
+                "sugar": 1
+            }
         },
         {
-            "id": 28,
-            "name": "Chocolate Chip Cookie",
-            "price": "0.99 €",
-            "image": "/images/chip2.jpeg",
+            "id": 23,
+            "name": "Chocolate Shake",
+            "price": "2.49 €",
+            "image": "/images/chocolateshake.jpeg",
             "nutrition": {
-                "calories": 160,
-                "fat": "8g",
-                "carbohydrates": "22g",
-                "protein": "2g"
+                "calories": 530,
+                "fat": "15g",
+                "carbohydrates": "85g",
+                "protein": "12g"
             },
-            "allergens": ["gluten", "milk", "egg"]
+            "allergens": ["milk"],
+            "ingredients": {
+                "chocolate syrup": 1,
+                "milk": 1,
+                "ice cream": 1,
+                "whipped cream": 1
+            }
         },
         {
-            "id": 29,
-            "name": "Oatmeal Raisin Cookie",
-            "price": "0.99 €",
-            "image": "/images/chip.avif",
+            "id": 24,
+            "name": "Strawberry Sundae",
+            "price": "1.99 €",
+            "image": "/images/strawberrysundae.jpeg",
             "nutrition": {
-                "calories": 170,
+                "calories": 280,
                 "fat": "7g",
-                "carbohydrates": "25g",
-                "protein": "2g"
+                "carbohydrates": "50g",
+                "protein": "5g"
             },
-            "allergens": ["gluten", "milk", "egg"]
-        },
-        {
-            "id": 30,
-            "name": "Soft Baked Chocolate Chip Cookie",
-            "price": "1.29 €",
-            "image": "/images/chip2.jpeg",
-            "nutrition": {
-                "calories": 180,
-                "fat": "9g",
-                "carbohydrates": "24g",
-                "protein": "2g"
-            },
-            "allergens": ["gluten", "milk", "egg"]
+            "allergens": ["milk"],
+            "ingredients": {
+                "strawberry syrup": 1,
+                "ice cream": 1,
+                "whipped cream": 1
+            }
         }
     ]
 }
