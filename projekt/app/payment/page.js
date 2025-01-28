@@ -94,7 +94,7 @@ const Payment = () => {
         router.push("/")
     }
 
-    const prepareTime = deliveryOption === "home-delivery" ? cart.length * 10 : cart.length * 2
+    const prepareTime = deliveryOption === "home-delivery" ? cart.length * 2 + 30 : cart.length * 2
 
     return (
         <div className="payment">
