@@ -790,3 +790,52 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+.user {
+  position: absolute;
+  top: 80px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  height: 200px;
+  width:300px;
+  border-radius: 10px;
+  z-index: 3;
+}
+
+.user h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-button, .logout-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-button:hover, .logout-button:hover {
+  background-color: #ff9900;
+}
+

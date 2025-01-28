@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import TotalPrice from "../components/TotalPrice"
 
 const Checkout = () => {
-    const { cart, removeFromCart, increaseQuantity, decreaseQuantity } = useCart()
+    const { cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart } = useCart()
     const [ totalPrice, setTotalPrice ] = useState(0)
     const [ expandedProductId, setExpandedProductId ] = useState(null)
     const router = useRouter()
@@ -66,6 +66,9 @@ const Checkout = () => {
                             </div>
                         )
                     })}
+                    <div>
+                        Prepare time: {cart.length * 2} min
+                    </div>
                 </div>
                 <div className="payment-summary">
                     <h2>Payment summary</h2>
@@ -75,6 +78,13 @@ const Checkout = () => {
                         onClick={() => router.push('/payment')}
                     >
                         Proceed to Payment</button>
+                    <button 
+                        className="payment-button"
+                        onClick={() => {
+                            router.push('/')
+                            clearCart()}}
+                    >
+                        Cancel</button>
                 </div>
             </div>
         </div>
