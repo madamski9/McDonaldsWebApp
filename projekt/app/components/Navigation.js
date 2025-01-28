@@ -25,7 +25,7 @@ const Navigation = () => {
                     </div>
                     <img src="/images/user-2.png" alt="User Profile" />
                 </ul>
-                {cartVisible && <Cart />}
+                {cartVisible && <Cart setCartVisible={setCartVisible}/>}
             </div>
         </nav>
     )

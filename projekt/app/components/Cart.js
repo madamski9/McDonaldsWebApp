@@ -1,37 +1,39 @@
 "use client"
 import { useCart } from "../context/CartProvider"
 import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 
-const Cart = () => {
+const Cart = ({ setCartVisible }) => {
     const { cart, removeFromCart, increaseQuantity, decreaseQuantity } = useCart()
     const [ totalPrice, setTotalPrice ] = useState(0)
+    const router = useRouter()
 
-    const handleCheckout = (cartProducts) => {
-        
+    const handleCheckout = () => {
+        router.push(`/checkout`)
     }
 
     const cartProducts = Object.keys(cart).map(key => {
         const product = cart[key]
         return (
-            <div key={product.id} className="cart-product">
+            <div key={product.uniqueId} className="cart-product">
                 <img src={product.image} alt={product.name} />
                 <div>{product.name}</div>
                 <div>{product.price}</div>
                 <button
-                    className="delete-cart-product-button"
-                    onClick={() => removeFromCart(product.id)}
+                    className="delete-cart"
+                    onClick={() => removeFromCart(product)}
                 >
-                    smietnik
+                    <img className="trash" src="/images/trash.png" />
                 </button>
                 <button
-                    className="increase-quantity-button"
-                    onClick={() => increaseQuantity(product.id)}
-                >+</button>
+                    className="decrease-quantity-button"
+                    onClick={() => decreaseQuantity(product)}
+                >-</button>
                 <div>{product.quantity}</div>
                 <button
-                    className="decrease-quantity-button"
-                    onClick={() => decreaseQuantity(product.id)}
-                >-</button>
+                    className="increase-quantity-button"
+                    onClick={() => increaseQuantity(product)}
+                >+</button>
             </div>
         )
     })
@@ -42,27 +44,32 @@ const Cart = () => {
     }, [cart])
 
     return (
-        <div className="cart-products">
-            {cart.length === 0 ? (
-                <div style={{color: "black"}}>
-                    Your cart is empty
-                </div>
-            ) : (
-                <div>
-                    {cartProducts}
-                    <div>
-                        <div>
-                            Total: {totalPrice.toFixed(2)} €
-                        </div>
-                        <button 
-                            className="checkout"
-                            onClick={() => handleCheckout(cartProducts)}
-                        >
-                            checkout
-                        </button>
+        <div className="overlay" onClick={() => setCartVisible(false)}>
+            <div className="cart-products" onClick={(e) => e.stopPropagation()}>
+                {cart.length === 0 ? (
+                    <div style={{color: "black"}}>
+                        Your cart is empty
                     </div>
-                </div>
-            )}
+                ) : (
+                    <div>
+                        {cartProducts}
+                        <div className="cart-summary">
+                            <div className="total-price">
+                                Total: {totalPrice.toFixed(2)} €
+                            </div>
+                            <button 
+                                className="checkout-button"
+                                onClick={() => {
+                                    handleCheckout()
+                                    setCartVisible(false)
+                                }}
+                            >
+                                checkout
+                            </button>
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
