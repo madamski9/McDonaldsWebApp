@@ -1,16 +1,14 @@
 "use client"
 import { useCart } from "../context/CartProvider"
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import { useRouter } from "next/navigation"
+import TotalPrice from "../components/TotalPrice"
 
 const Checkout = () => {
     const { cart, removeFromCart, increaseQuantity, decreaseQuantity } = useCart()
     const [ totalPrice, setTotalPrice ] = useState(0)
     const [ expandedProductId, setExpandedProductId ] = useState(null)
-
-    useEffect(() => {
-        const price = cart.reduce((acc, item) => acc + item.quantity * parseFloat(item.price.replace(" €", "")), 0).toFixed(2)
-        setTotalPrice(price)
-    }, [cart])
+    const router = useRouter()
 
     const toggleExpand = (productId) => {
         setExpandedProductId(expandedProductId === productId ? null : productId)
@@ -71,8 +69,12 @@ const Checkout = () => {
                 </div>
                 <div className="payment-summary">
                     <h2>Payment summary</h2>
-                    <div>Total Price: {totalPrice} €</div>
-                    <button className="payment-button">Proceed to Payment</button>
+                    <div>Total Price: <TotalPrice /> €</div>
+                    <button 
+                        className="payment-button"
+                        onClick={() => router.push('/payment')}
+                    >
+                        Proceed to Payment</button>
                 </div>
             </div>
         </div>

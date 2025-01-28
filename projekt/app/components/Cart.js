@@ -1,7 +1,8 @@
 "use client"
 import { useCart } from "../context/CartProvider"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useRouter } from "next/navigation"
+import TotalPrice from "./TotalPrice"
 
 const Cart = ({ setCartVisible }) => {
     const { cart, removeFromCart, increaseQuantity, decreaseQuantity } = useCart()
@@ -38,11 +39,6 @@ const Cart = ({ setCartVisible }) => {
         )
     })
 
-    useEffect(() => {
-        const price = cart.reduce((acc, item) => acc + item.quantity * parseFloat(item.price), 0)
-        setTotalPrice(price)
-    }, [cart])
-
     return (
         <div className="overlay" onClick={() => setCartVisible(false)}>
             <div className="cart-products" onClick={(e) => e.stopPropagation()}>
@@ -55,7 +51,7 @@ const Cart = ({ setCartVisible }) => {
                         {cartProducts}
                         <div className="cart-summary">
                             <div className="total-price">
-                                Total: {totalPrice.toFixed(2)} €
+                                Total: <TotalPrice /> €
                             </div>
                             <button 
                                 className="checkout-button"

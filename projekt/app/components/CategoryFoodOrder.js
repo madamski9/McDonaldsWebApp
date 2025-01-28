@@ -117,13 +117,13 @@ const CategoryFoodOrder = ({ categoryClicked }) => {
                                                 {selectedProduct.ingredients[key].price}
                                             </p>
                                             <button
-                                                className="num-of-ingredients"
-                                                onClick={() => handleIncreaseQuantity(selectedProduct.ingredients[key].price, key)}
-                                            >+</button>
-                                            <button
                                                 onClick={() => handleDecreaseQuantity(selectedProduct.ingredients[key].price, key)}
                                                 className="num-of-ingredients"
                                             >-</button>
+                                            <button
+                                                className="num-of-ingredients"
+                                                onClick={() => handleIncreaseQuantity(selectedProduct.ingredients[key].price, key)}
+                                            >+</button>
                                         </div>
                                     </div>
                                 ))}
