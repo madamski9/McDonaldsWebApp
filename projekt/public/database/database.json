@@ -4,7 +4,8 @@
         "wraps": "/images/mcwrap.png",
         "breakfast": "/images/eggmcmufin.jpeg",
         "sides": "/images/friesmedium.jpeg",
-        "desserts": "/images/lod.avif"
+        "desserts": "/images/lod.avif",
+        "drinks": "/images/cocacola.png"
     },
     "burgers": [
         {
@@ -602,6 +603,103 @@
                 "sugar": {"quantity": 1, "price": "0.05 €"},
                 "butter": {"quantity": 1, "price": "0.10 €"},
                 "egg": {"quantity": 1, "price": "0.10 €"}
+            }
+        }
+    ],
+    "drinks": [
+        {
+            "id": 31,
+            "name": "Coca-Cola",
+            "price": "1.49 €",
+            "image": "/images/cocacola.png",
+            "nutrition": {
+                "calories": 140,
+                "fat": "0g",
+                "carbohydrates": "39g",
+                "protein": "0g"
+            },
+            "allergens": ["none"],
+            "ingredients": {
+                "carbonated water": {"quantity": 1, "price": "0.10 €"},
+                "sugar": {"quantity": 1, "price": "0.05 €"},
+                "caramel color": {"quantity": 1, "price": "0.05 €"},
+                "phosphoric acid": {"quantity": 1, "price": "0.05 €"},
+                "natural flavors": {"quantity": 1, "price": "0.05 €"},
+                "caffeine": {"quantity": 1, "price": "0.05 €"}
+            }
+        },
+        {
+            "id": 32,
+            "name": "Sprite",
+            "price": "1.49 €",
+            "image": "/images/sprite.jpeg",
+            "nutrition": {
+                "calories": 140,
+                "fat": "0g",
+                "carbohydrates": "38g",
+                "protein": "0g"
+            },
+            "allergens": ["none"],
+            "ingredients": {
+                "carbonated water": {"quantity": 1, "price": "0.10 €"},
+                "sugar": {"quantity": 1, "price": "0.05 €"},
+                "citric acid": {"quantity": 1, "price": "0.05 €"},
+                "natural flavors": {"quantity": 1, "price": "0.05 €"},
+                "sodium citrate": {"quantity": 1, "price": "0.05 €"}
+            }
+        },
+        {
+            "id": 33,
+            "name": "Fanta",
+            "price": "1.49 €",
+            "image": "/images/fanta.jpeg",
+            "nutrition": {
+                "calories": 160,
+                "fat": "0g",
+                "carbohydrates": "44g",
+                "protein": "0g"
+            },
+            "allergens": ["none"],
+            "ingredients": {
+                "carbonated water": {"quantity": 1, "price": "0.10 €"},
+                "sugar": {"quantity": 1, "price": "0.05 €"},
+                "citric acid": {"quantity": 1, "price": "0.05 €"},
+                "natural flavors": {"quantity": 1, "price": "0.05 €"},
+                "sodium benzoate": {"quantity": 1, "price": "0.05 €"},
+                "color (beta-carotene)": {"quantity": 1, "price": "0.05 €"}
+            }
+        },
+        {
+            "id": 34,
+            "name": "Orange Juice",
+            "price": "1.99 €",
+            "image": "/images/orangejuice.png",
+            "nutrition": {
+                "calories": 110,
+                "fat": "0g",
+                "carbohydrates": "26g",
+                "protein": "2g"
+            },
+            "allergens": ["none"],
+            "ingredients": {
+                "orange juice": {"quantity": 1, "price": "0.50 €"}
+            }
+        },
+        {
+            "id": 35,
+            "name": "Coffee",
+            "price": "1.29 €",
+            "image": "/images/coffee.png",
+            "nutrition": {
+                "calories": 5,
+                "fat": "0g",
+                "carbohydrates": "1g",
+                "protein": "0g"
+            },
+            "allergens": ["none"],
+            "ingredients": {
+                "coffee": {"quantity": 1, "price": "0.50 €"},
+                "water": {"quantity": 1, "price": "0.10 €"}
             }
         }
     ]
