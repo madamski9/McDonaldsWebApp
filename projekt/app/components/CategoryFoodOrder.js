@@ -1,16 +1,52 @@
 "use client"
 import FetchProducts from "./FetchProducts"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useReducer } from "react"
 import { useCart } from "../context/CartProvider"
+
+const productReducer = (state, action) => {
+    switch (action.type) {
+        case "SET_PRODUCT":
+            return action.payload
+        case "INCREASE_INGREDIENT":
+            return {
+                ...state,
+                ingredients: {
+                    ...state.ingredients,
+                    [action.ingredientKey]: {
+                        ...state.ingredients[action.ingredientKey],
+                        quantity: state.ingredients[action.ingredientKey].quantity + 1
+                    }
+                },
+                price: (parseFloat(state.price.replace(" €", "")) + action.price).toFixed(2) + " €"
+            }
+        case "DECREASE_INGREDIENT":
+            return {
+                ...state,
+                ingredients: {
+                    ...state.ingredients,
+                    [action.ingredientKey]: {
+                        ...state.ingredients[action.ingredientKey],
+                        quantity: Math.max(state.ingredients[action.ingredientKey].quantity - 1, 0)
+                    }
+                },
+                price: Math.max((parseFloat(state.price.replace(" €", "")) - action.price).toFixed(2), 0) + " €"
+            }
+        case "RESET":
+            return null
+        default:
+            return state
+    }
+}
+
 
 const CategoryFoodOrder = ({ categoryClicked }) => {
     const [products, setProducts] = useState([])
     const [finalAddVisible, setFinalAddVisible] = useState(false)
-    const [selectedProduct, setSelectedProduct] = useState(null)
+    const [ selectedProduct, dispatch ] = useReducer(productReducer, null)
     const { addToCart, cart } = useCart()
 
     const handleClick = (product) => {
-        setSelectedProduct(product)
+        dispatch({ type: "SET_PRODUCT", payload: product })
         setFinalAddVisible(true)
     }
 
@@ -18,42 +54,15 @@ const CategoryFoodOrder = ({ categoryClicked }) => {
         addToCart(selectedProduct)
         console.log(selectedProduct)
         setFinalAddVisible(false)
+        dispatch({ type: "RESET" })
     }
 
     const handleIncreaseQuantity = (price, ingredientKey) => {
-        price = parseFloat(price.replace(" €", ""))
-        setSelectedProduct(prevProduct => {
-            const updatedIngredients = {
-                ...prevProduct.ingredients,
-                [ingredientKey]: {
-                    ...prevProduct.ingredients[ingredientKey],
-                    quantity: prevProduct.ingredients[ingredientKey].quantity + 1
-                }
-            }
-            return {
-                ...prevProduct,
-                ingredients: updatedIngredients,
-                price: (parseFloat(prevProduct.price.replace(" €", "")) + price).toFixed(2) + " €"
-            }
-        })
+        dispatch({ type: "INCREASE_INGREDIENT", price: parseFloat(price.replace(" €", "")), ingredientKey })
     }
-
+    
     const handleDecreaseQuantity = (price, ingredientKey) => {
-        price = parseFloat(price.replace(" €", ""))
-        setSelectedProduct(prevProduct => {
-            const updatedIngredients = {
-                ...prevProduct.ingredients,
-                [ingredientKey]: {
-                    ...prevProduct.ingredients[ingredientKey],
-                    quantity: Math.max(prevProduct.ingredients[ingredientKey].quantity - 1, 0)
-                }
-            }
-            return {
-                ...prevProduct,
-                ingredients: updatedIngredients,
-                price: Math.max((parseFloat(prevProduct.price.replace(" €", "")) - price).toFixed(2), 0) + " €"
-            }
-        })
+        dispatch({ type: "DECREASE_INGREDIENT", price: parseFloat(price.replace(" €", "")), ingredientKey })
     }
 
     useEffect(() => {
