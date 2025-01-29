@@ -830,3 +830,7 @@ body {
 .login-button:hover, .logout-button:hover {
   background-color: #ff9900;
 }
+
+.faq {
+  height: 100vh;
+}

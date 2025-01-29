@@ -1,5 +1,6 @@
 import OrderButton from "./components/OrderButton"
 import MenuButton from "./components/MenuButton"
+import FaqButton from "./components/FaqButton"
 
 const HomePage = () => {
   return (
@@ -19,11 +20,7 @@ const HomePage = () => {
           <h2>Special Offers</h2>
           <p>Check out our latest promotions and special deals.</p>
         </div>
-        <div className="feature three">
-          <img src="/images/faq.jpeg" alt="Feature 3" />
-          <h2>Faq</h2>
-          <p>Your right to know</p>
-        </div>
+        <FaqButton />
       </section>
     </div>
   )

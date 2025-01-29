@@ -36,7 +36,10 @@ const Navigation = () => {
                         style={{cursor: "pointer"}}
                         onClick={() => router.push("/menu")}
                     >Menu</div>
-                    <div>About</div>
+                    <div
+                        style={{cursor: "pointer"}}
+                        onClick={() => router.push("/faq")}
+                    >About</div>
                 </ul>
             </div>
             {username ? (
