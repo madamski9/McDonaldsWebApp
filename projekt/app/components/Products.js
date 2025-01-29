@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, useCallback, useMemo } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { useRouter } from "next/navigation"
 import FetchProducts from "./FetchProducts"
 
@@ -15,9 +15,9 @@ const Products = () => {
         getProducts()
     }, [])
 
-    const handleItemClick = useCallback((id) => {
+    const handleItemClick = (id) => {
         router.push(`/menu/${id}`)
-    }, [router])
+    }
 
     const processedProducts = useMemo(() => {
         if (!products || Object.keys(products).length === 0) return []

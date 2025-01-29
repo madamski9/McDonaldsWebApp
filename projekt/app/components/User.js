@@ -1,19 +1,24 @@
 "use client"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import Cookies from "js-cookie"
 
 const User = ({ setUserVisible }) => {
     const [ username, setUsername ] = useState("")
     const [ password, setPassword ] = useState("")
+    const searchInput = useRef(null)
 
     const handleLogin = (event) => {
         event.preventDefault()
         console.log("Logging in with", { username, password })
-        Cookies.set("username", username, { expires: 1 / 1440 }) //! 10 minut
-        Cookies.set("loggedIn", true, { expires: 1 / 1440 })
+        Cookies.set("username", username, { expires: 10 / 1440 }) //! 10 minut
+        Cookies.set("loggedIn", true, { expires: 10 / 1440 })
         setUserVisible(false)
         window.location.reload()
     }
+
+    useEffect(() => {
+        searchInput.current.focus()
+    }, [])
 
     return (
         <div 
@@ -25,6 +30,7 @@ const User = ({ setUserVisible }) => {
                     <div className="input-group">
                         <label htmlFor="username">Username:</label>
                         <input
+                            ref={searchInput}
                             type="text"
                             id="username"
                             value={username}

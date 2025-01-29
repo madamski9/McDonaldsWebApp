@@ -4,6 +4,8 @@
   --font1: 'Roboto', sans-serif;
   --font2: 'Bebas Neue', cursive;
   --font3: 'Montserrat', sans-serif;
+  --orange: #ffcc00;;
+  --orange-hover: #ff9900;
 }
 body {
   margin: 0;
@@ -166,7 +168,7 @@ body {
   bottom: 150px;
   left: 19.5%;
   transform: translateX(-50%);
-  background-color: #ffcc00;
+  background-color: var(--orange);
   color: #ffffff;
   padding: 20px 100px;
   font-size: 24px;
@@ -179,7 +181,7 @@ body {
 }
 
 .order-now-btn:hover {
-  background-color: #ff9900;
+  background-color: var(--orange-hover);
 }
 
 .features-section {
@@ -388,7 +390,7 @@ body {
 .main-cart {
   height: 100px;
   width:100px;
-  background-color: #ffcc00;
+  background-color: var(--orange);
 }
 
 .final-add {
@@ -420,14 +422,14 @@ body {
   border-radius: 10px;
 }
 .modal-content button {
-  background-color: #ffcc00;
+  background-color: var(--orange);
   border: none;
   cursor: pointer;
   margin-top: 10px;
 }
 
 .modal-content button:hover {
-  background-color: #ff9900;
+  background-color: var(--orange-hover);
 }
 .close-button {
   position: absolute;
@@ -519,7 +521,7 @@ body {
 }
 
 .payment-button {
-  background-color: #ffcc00;
+  background-color: var(--orange);
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -527,7 +529,7 @@ body {
 }
 
 .payment-button:hover {
-  background-color: #ff9900;
+  background-color: var(--orange-hover);
 }
 
 .overlay {
@@ -544,7 +546,7 @@ body {
 }
 
 .expand-button {
-  background-color: #ffcc00;
+  background-color: var(--orange);
   border: none;
   padding: 5px 10px;
   cursor: pointer;
@@ -559,7 +561,7 @@ body {
 }
 
 .decrease-quantity-button, .increase-quantity-button {
-  background-color: #ffcc00;
+  background-color: var(--orange);
   border: none;
   padding: 5px 10px;
   cursor: pointer;
@@ -570,7 +572,7 @@ body {
 }
 
 .decrease-quantity-button:hover, .increase-quantity-button:hover {
-  background-color: #ff9900;
+  background-color: var(--orange-hover);
 }
 .delete-cart {
   background-color:transparent;
@@ -618,7 +620,7 @@ body {
 }
 
 .cart-product .quantity-controls button {
-  background-color: #ffcc00;
+  background-color: var(--orange);
   border: none;
   padding: 5px 10px;
   cursor: pointer;
@@ -627,7 +629,7 @@ body {
 }
 
 .cart-product .quantity-controls button:hover {
-  background-color: #ff9900;
+  background-color: var(--orange-hover);
 }
 
 .cart-product .delete-cart {
@@ -654,7 +656,7 @@ body {
 }
 
 .cart-summary .checkout-button {
-  background-color: #ffcc00;
+  background-color: var(--orange);
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -663,7 +665,7 @@ body {
 }
 
 .cart-summary .checkout-button:hover {
-  background-color: #ff9900;
+  background-color: var(--orange-hover);
 }
 
 .increase-quantity-button.checkout {
@@ -746,7 +748,7 @@ body {
 }
 
 .payment-button {
-  background-color: #ffcc00;
+  background-color: var(--orange);
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -758,7 +760,7 @@ body {
 }
 
 .payment-button:hover {
-  background-color: #ff9900;
+  background-color: var(--orange-hover);
 }
 
 .method-item, .delivery-item {
@@ -820,7 +822,7 @@ body {
 .login-button, .logout-button {
   width: 100%;
   padding: 10px;
-  background-color: #ffcc00;
+  background-color: var(--orange);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -828,9 +830,63 @@ body {
 }
 
 .login-button:hover, .logout-button:hover {
-  background-color: #ff9900;
+  background-color: var(--orange-hover);
 }
 
 .faq {
   height: 100vh;
+}
+
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq h2 {
+  text-align: center;
+  color: #333;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.faq-item button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--orange);
+  cursor: pointer;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.faq-item button:hover {
+  color: var(--orange-hover);
+}
+
+.faq-item p {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+  transition: max-height 0.3s ease;
+}
+
+.faq-item p.collapsed {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-item p.expanded {
+  max-height: 1000px;
+  transition: max-height 0.3s ease;
 }

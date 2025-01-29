@@ -51,7 +51,7 @@ const CategoryFoodOrder = ({ categoryClicked }) => {
             return {
                 ...prevProduct,
                 ingredients: updatedIngredients,
-                price: (parseFloat(prevProduct.price.replace(" €", "")) - price).toFixed(2) + " €"
+                price: Math.max((parseFloat(prevProduct.price.replace(" €", "")) - price).toFixed(2), 0) + " €"
             }
         })
     }

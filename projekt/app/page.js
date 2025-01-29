@@ -1,6 +1,7 @@
 import OrderButton from "./components/OrderButton"
 import MenuButton from "./components/MenuButton"
 import FaqButton from "./components/FaqButton"
+import SpecialButton from "./components/SpecialButton"
 
 const HomePage = () => {
   return (
@@ -15,11 +16,7 @@ const HomePage = () => {
       </header>
       <section className="features-section">
         <MenuButton />
-        <div className="feature two">
-          <img src="/images/special2.png" alt="Feature 2" />
-          <h2>Special Offers</h2>
-          <p>Check out our latest promotions and special deals.</p>
-        </div>
+        <SpecialButton />
         <FaqButton />
       </section>
     </div>

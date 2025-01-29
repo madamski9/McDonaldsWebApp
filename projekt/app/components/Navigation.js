@@ -2,7 +2,7 @@
 import Logo from "./Logo"
 import Cart from "./Cart"
 import User from "./User"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { useRouter } from "next/navigation"
 import Cookies from "js-cookie"
 
@@ -12,6 +12,22 @@ const Navigation = () => {
     const router = useRouter()
     const [username, setUsername] = useState("")
 
+    const handleLogout = () => {
+        Cookies.remove("username")
+        Cookies.remove("loggedIn")
+        setUsername("")
+        router.push("/")
+        window.location.reload()
+    }
+
+    const handleUserVisible = useCallback(() => {
+        setUserVisible(!userVisible)
+    }, [userVisible])
+
+    const handleCartVisible = useCallback(() => {
+        setCartVisible(!cartVisible)
+    }, [cartVisible])
+
     useEffect(() => {
         const storedUsername = Cookies.get("username")
         if (storedUsername) {
@@ -20,13 +36,6 @@ const Navigation = () => {
             setUsername("")
         }
     }, [])
-
-    const handleLogout = () => {
-        Cookies.remove("username")
-        Cookies.remove("loggedIn")
-        setUsername("")
-        window.location.reload()
-    }
 
     return (
         <nav className="navigation">
@@ -62,12 +71,12 @@ const Navigation = () => {
                         )}
                     <div 
                         className="cart"
-                        onClick={() => setCartVisible(!cartVisible)}
+                        onClick={() => handleCartVisible()}
                     >
                         <img src="/images/shopping-cart.png"/>
                     </div>
                     <div
-                        onClick={() => setUserVisible(!userVisible)}
+                        onClick={() => handleUserVisible()}
                     >
                         <img src="/images/user-2.png" alt="User Profile" />
                     </div>

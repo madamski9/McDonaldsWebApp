@@ -7,13 +7,13 @@ import { useRouter } from "next/navigation"
 
 const Payment = () => {
     const { cart, clearCart } = useCart()
-    const [deliveryOption, setDeliveryOption] = useState("")
-    const [tableNumber, setTableNumber] = useState("")
-    const [address, setAddress] = useState("")
-    const [city, setCity] = useState("")
-    const [postalCode, setPostalCode] = useState("")
-    const [paymentMethod, setPaymentMethod] = useState("")
-    const [error, setError] = useState("")
+    const [ deliveryOption, setDeliveryOption ] = useState("")
+    const [ tableNumber, setTableNumber ] = useState("")
+    const [ address, setAddress ] = useState("")
+    const [ city, setCity ] = useState("")
+    const [ postalCode, setPostalCode ] = useState("")
+    const [ paymentMethod, setPaymentMethod ] = useState("")
+    const [ error, setError ] = useState("")
     const router = useRouter()
 
     const handleDeliveryOptionChange = (event) => {
@@ -34,32 +34,33 @@ const Payment = () => {
 
     const generateAndOpenPDF = (orderDetails) => {
         const doc = new jsPDF()
-        
+    
         doc.setFontSize(16)
-        doc.text("Potwierdzenie zamówienia", 10, 10)
-    
+        doc.text("Order Confirmation", 10, 10)
+
         doc.setFontSize(12)
-        doc.text(`Opcja dostawy: ${orderDetails.deliveryOption}`, 10, 20)
-    
+        doc.text(`Delivery Option: ${orderDetails.deliveryOption}`, 10, 20)
+
         if (orderDetails.deliveryOption === "home-delivery") {
-            doc.text(`Adres: ${orderDetails.address}`, 10, 30)
-            doc.text(`Miasto: ${orderDetails.city}`, 10, 40)
-            doc.text(`Kod pocztowy: ${orderDetails.postalCode}`, 10, 50)
+            doc.text(`Address: ${orderDetails.address}`, 10, 30)
+            doc.text(`City: ${orderDetails.city}`, 10, 40)
+            doc.text(`Postal Code: ${orderDetails.postalCode}`, 10, 50)
         } else if (orderDetails.deliveryOption === "table-service") {
-            doc.text(`Numer stolika: ${orderDetails.tableNumber}`, 10, 30)
+            doc.text(`Table Number: ${orderDetails.tableNumber}`, 10, 30)
         }
-        
+
         doc.setFontSize(12)
-        doc.text(`Metoda platnosci: ${orderDetails.paymentMethod}`, 10, 60)
-        doc.text("Zamówione produkty:", 10, 70); 
+        doc.text(`Payment Method: ${orderDetails.paymentMethod}`, 10, 60)
+        doc.text("Ordered Products:", 10, 70)
+
 
         Object.keys(cart).forEach((key, index) => {
-            const product = cart[key];
-            const line = `${index + 1}. ${product.name} - ${product.quantity} szt. - ${product.price}`;
-            doc.text(line, 10, 80 + index * 10); 
+            const product = cart[key]
+            const line = `${index + 1}. ${product.name} - ${product.quantity} szt. - ${product.price}`
+            doc.text(line, 10, 80 + index * 10) 
         })
         const price = cart.reduce((acc, item) => acc + item.quantity * parseFloat(item.price.replace(" €", "")), 0).toFixed(2)
-        doc.text(`Cena calkowita: ${price} €`, 10, 80 + Object.keys(cart).length * 10)
+        doc.text(`Total price: ${price} €`, 10, 80 + Object.keys(cart).length * 10)
     
         const pdfBlob = doc.output("bloburl")
         window.open(pdfBlob, "_blank")
@@ -133,7 +134,6 @@ const Payment = () => {
                         <div className="method-item">
                             <input 
                                 type="radio" 
-                                id="table-service" 
                                 name="delivery-option" 
                                 value="table-service" 
                                 checked={deliveryOption === "table-service"} 
@@ -146,18 +146,27 @@ const Payment = () => {
                                 <label>Table Number:</label>
                                 <input
                                     type="text"
-                                    id="table-number"
                                     value={tableNumber}
                                     onChange={(e) => setTableNumber(e.target.value)}
                                 />
                             </div>
                         )}
                         <div className="method-item">
-                            <input type="radio" id="pickup" name="delivery-option" value="pickup" checked={deliveryOption === "pickup"} onChange={handleDeliveryOptionChange} />
+                            <input 
+                                type="radio" 
+                                name="delivery-option" 
+                                value="pickup" 
+                                checked={deliveryOption === "pickup"} 
+                                onChange={handleDeliveryOptionChange} />
                             <label>Pickup</label>
                         </div>
                         <div className="method-item">
-                            <input type="radio" id="home-delivery" name="delivery-option" value="home-delivery" checked={deliveryOption === "home-delivery"} onChange={handleDeliveryOptionChange} />
+                            <input 
+                                type="radio" 
+                                name="delivery-option" 
+                                value="home-delivery" 
+                                checked={deliveryOption === "home-delivery"} 
+                                onChange={handleDeliveryOptionChange} />
                             <label>Home Delivery</label>
                         </div>
                         {deliveryOption === "home-delivery" && (
@@ -166,7 +175,6 @@ const Payment = () => {
                                     <label>Address:</label>
                                     <input
                                         type="text"
-                                        id="address"
                                         value={address}
                                         onChange={(e) => setAddress(e.target.value)}
                                     />
@@ -175,7 +183,6 @@ const Payment = () => {
                                     <label>City:</label>
                                     <input
                                         type="text"
-                                        id="city"
                                         value={city}
                                         onChange={(e) => setCity(e.target.value)}
                                     />
@@ -184,7 +191,6 @@ const Payment = () => {
                                     <label>Postal Code:</label>
                                     <input
                                         type="text"
-                                        id="postal-code"
                                         value={postalCode}
                                         onChange={(e) => setPostalCode(e.target.value)}
                                     />
@@ -195,15 +201,27 @@ const Payment = () => {
                     <div className="payment-methods">
                         <h2>Payment Methods</h2>
                         <div className="method-item">
-                            <input type="radio" id="credit-card" name="payment-method" value="credit-card" onChange={handlePaymentMethodChange} />
+                            <input 
+                                type="radio"
+                                name="payment-method" 
+                                value="credit-card" 
+                                onChange={handlePaymentMethodChange} />
                             <label>Credit Card</label>
                         </div>
                         <div className="method-item">
-                            <input type="radio" id="paypal" name="payment-method" value="paypal" onChange={handlePaymentMethodChange} />
+                            <input 
+                                type="radio" 
+                                name="payment-method"
+                                value="paypal" 
+                                onChange={handlePaymentMethodChange} />
                             <label>PayPal</label>
                         </div>
                         <div className="method-item">
-                            <input type="radio" id="bank-transfer" name="payment-method" value="bank-transfer" onChange={handlePaymentMethodChange} />
+                            <input 
+                                type="radio" 
+                                name="payment-method" 
+                                value="bank-transfer" 
+                                onChange={handlePaymentMethodChange} />
                             <label>Bank Transfer</label>
                         </div>
                     </div>
