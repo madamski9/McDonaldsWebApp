@@ -9,8 +9,8 @@ const User = ({ setUserVisible }) => {
     const handleLogin = (event) => {
         event.preventDefault()
         console.log("Logging in with", { username, password })
-        Cookies.set("username", username, { expires: 10 / 1440 }) //! 10 minut
-        Cookies.set("loggedIn", true, { expires: 10 / 1440 })
+        Cookies.set("username", username, { expires: 1 / 1440 }) //! 10 minut
+        Cookies.set("loggedIn", true, { expires: 1 / 1440 })
         setUserVisible(false)
         window.location.reload()
     }

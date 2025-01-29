@@ -16,6 +16,8 @@ const Navigation = () => {
         const storedUsername = Cookies.get("username")
         if (storedUsername) {
             setUsername(storedUsername)
+        } else {
+            setUsername("")
         }
     }, [])
 
