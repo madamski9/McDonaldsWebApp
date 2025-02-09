@@ -10,12 +10,13 @@ export default function PokemonPage() {
     const [filteredPokemonList, setFilteredPokemonList] = useState([])
     const [inputValue, setInputValue] = useState("")
     const [inputLimitValue, setInputLimitValue] = useState("")
+    const [selectedForComparison, setSelectedForComparison] = useState([])
+    const [isComparisonMode, setIsComparisonMode] = useState(false)
     const params = useSearchParams()
     const type = params.get("type")
     const search = params.get("search") 
     const limit = parseInt(params.get("limit") || "21", 10)
     const sort = params.get("sort")
-    const compare = params.get("compare")
 
     const fetchPokemonList = async (offset, type, limit) => {
         try {
@@ -85,20 +86,29 @@ export default function PokemonPage() {
     const handleClickLeft = () => (offsetValue > 0) ? setOffsetValue(offsetValue - limit) : null
     const handleClickRight = () => setOffsetValue(offsetValue + limit)
 
-    const handleClickCompare = (state) => {
-        console.log("compare dziala")
-        const params = new URLSearchParams(window.location.search)
-        params.set("compare", state)
-        const newUrl = `${window.location.pathname}?${params.toString()}`
-        window.history.replaceState({}, "", newUrl)
+    const toggleSelectForComparison = (pokemon) => {
+        if (!isComparisonMode) return;
+
+        setSelectedForComparison((prevSelected) => {
+            if (prevSelected.some(p => p.name === pokemon.name)) {
+                return prevSelected.filter(p => p.name !== pokemon.name);
+            } else {
+                if (prevSelected.length < 2) {
+                    return [...prevSelected, pokemon];
+                } else {
+                    alert("Możesz porównać tylko dwa pokemony na raz!");
+                    return prevSelected;
+                }
+            }
+        });
     }
-    
+
     useEffect(() => { fetchPokemonList(offsetValue, type, limit) }, [offsetValue, type, limit])
 
     useEffect(() => {
         if (search) {
             setInputValue(search)
-    
+
             const filtered = pokemonList.filter((pokemon) =>
                 pokemon.name?.toLowerCase().includes(search.toLowerCase())
             )
@@ -115,9 +125,20 @@ export default function PokemonPage() {
             <div>
                 <button
                     className="compareButton"
-                    onClick={() => handleClickCompare("true")}
+                    onClick={() => {
+                        if (!isComparisonMode) {
+                            setIsComparisonMode(true);
+                            alert("Wybierz dwa pokemony do porównania klikając na nie.");
+                        } else if (selectedForComparison.length === 2) {
+                            alert(`Porównanie: ${selectedForComparison[0].name} vs ${selectedForComparison[1].name}`);
+                            setIsComparisonMode(false);
+                            setSelectedForComparison([]);
+                        } else {
+                            alert("Musisz wybrać dwa pokemony do porównania!");
+                        }
+                    }}
                 >
-                    Porownaj
+                    {isComparisonMode ? "Zatwierdź porównanie" : "Porównaj"}
                 </button>
                 <input
                     className="input"
@@ -125,7 +146,8 @@ export default function PokemonPage() {
                     placeholder="Search..."
                     value={inputValue} 
                     onChange={handleChange}
-                /><input
+                />
+                <input
                     className="limitInput"
                     type="number"
                     placeholder="limit"
@@ -133,7 +155,12 @@ export default function PokemonPage() {
                     onChange={handleLimitChange}
                 />
             </div>
-            <PokemonList pokemonList={sort === "name" ? [...filteredPokemonList].sort((a, b) => a.name.localeCompare(b.name)) : filteredPokemonList} />
+            <PokemonList 
+                pokemonList={sort === "name" ? [...filteredPokemonList].sort((a, b) => a.name.localeCompare(b.name)) : filteredPokemonList} 
+                toggleSelectForComparison={toggleSelectForComparison} 
+                isComparisonMode={isComparisonMode}
+                selectedForComparison={selectedForComparison}
+            />
             <div className="buttons">
                 <button className="lt" onClick={handleClickLeft}>&lt;</button>
                 <button className="gt" onClick={handleClickRight}>&gt;</button>

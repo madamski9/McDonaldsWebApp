@@ -1,18 +1,18 @@
 "use client"
+
 import Link from 'next/link';
 import React, { useState, useEffect } from "react"
 
-export default function PokemonList({ pokemonList }) {
+export default function PokemonList({ pokemonList, toggleSelectForComparison, isComparisonMode }) {
     const [isChecked, setIsChecked] = useState({})
 
-    const handleChange = (pokemon) => (event) => {
+    const handleFavoriteChange = (pokemon) => (event) => {
         const newCheckedState = {
             ...isChecked,
             [pokemon]: event.target.checked
         };
 
         setIsChecked(newCheckedState)
-        console.log(isChecked)
         localStorage.setItem('isChecked', JSON.stringify(newCheckedState))
     }
 
@@ -21,11 +21,10 @@ export default function PokemonList({ pokemonList }) {
         try {
             if (savedCheckedPokemons) {
                 const parsedCheckedPokemons = JSON.parse(savedCheckedPokemons);
-                console.log("dane po parsowaniu:", parsedCheckedPokemons);
                 setIsChecked(parsedCheckedPokemons || {});
             }
         } catch (error) {
-            console.error("blad", error);
+            console.error("Błąd podczas odczytu z localStorage", error);
             localStorage.removeItem('isChecked'); 
         }
     }, []);
@@ -40,7 +39,11 @@ export default function PokemonList({ pokemonList }) {
                 <h3>Lista Pokemonów</h3>
                 <div className="gridContainer">
                     {pokemonList.map((pokemon) => (
-                        <div key={pokemon.name} className="mainPokemon">
+                        <div 
+                            key={pokemon.name} 
+                            className={`mainPokemon ${isComparisonMode ? 'clickable' : ''}`} 
+                            onClick={() => isComparisonMode && toggleSelectForComparison(pokemon)}
+                        >
                             <Link href={`/pokemon/${pokemon.name}`}>
                                 <li className="clickable">
                                     <img
@@ -58,7 +61,8 @@ export default function PokemonList({ pokemonList }) {
                                     type="checkbox" 
                                     className="star-checkbox" 
                                     checked={isChecked[pokemon.name] ?? false}
-                                    onChange={handleChange(pokemon.name)}
+                                    onChange={handleFavoriteChange(pokemon.name)}
+                                    onClick={(e) => e.stopPropagation()} 
                                 />
                                 <div className="star"></div>
                             </label>
@@ -66,7 +70,6 @@ export default function PokemonList({ pokemonList }) {
                     ))}
                 </div>
             </section>
-
         </div>
     );
-}
+} 
